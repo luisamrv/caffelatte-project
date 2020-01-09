@@ -22,7 +22,7 @@
     <body>
         <div class="jumbotron jumbotron-fluid">
           <div class="container-fluid">
-            <div class="col-12 text-center"><img src="./img/caffe-latte-logo.png" class="img-fluid logo" alt=""></div>
+            <div class="col-12 text-center"><a href="https://www.caffelattehome.com/"><img src="./img/caffe-latte-logo.png" class="img-fluid logo" alt=""></a></div>
             <div class="col col-md-10 col-lg-5">
 
                 <nav>
@@ -47,6 +47,11 @@
                             {{ csrf_field() }}
                             <input type="text" name="email" placeholder="ENTER YOUR EMAIL">
                             <button type="submit">SUBSCRIBE</button>
+                            @if(Session::has('message'))
+                                <p>{{ Session::get('message') }}</p>
+                            @elseif ($errors->has('email'))
+                                <p>{{ $errors->first('email') }}</p>
+                            @endif
                         </form>
                     </div>
                   </div>

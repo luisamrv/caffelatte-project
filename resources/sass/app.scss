@@ -4,9 +4,7 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-@font-face {font-family:Avenir; src:url("/fonts/AvenirLTStd-Medium.otf"); font-weight:normal;}
-@font-face {font-family:AvenirBook; src:url("/fonts/AvenirLTStd-Book.otf"); font-weight:normal;}
-@font-face {font-family:AvenirRoman; src:url("/fonts/AvenirLTStd-Roman.otf"); font-weight:normal;}
+@font-face {font-family:Avenir; src:url("/fonts/Avenir.ttc"); font-weight:medium;font-syle:normal;}
 
 body {
 	width: 100%;
@@ -15,7 +13,7 @@ body {
 	font-family:'Avenir', sans-serif;
 	word-wrap: break-word;
 	margin: 0px;
-	background-color: #ccc3ba;
+	background-color: #d7cdc3;
 	font-size: 10px;
 }
 
@@ -26,7 +24,7 @@ body {
   background-size: cover;
   height: 100vh;
   margin: 0;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .logo {
@@ -70,14 +68,14 @@ nav {
 }
 
 .tab-content {
-  height: 16rem;
+  height: 22rem;
   padding: 1.6rem 0rem;
   color: #3a2d24;
 }
 
 .tab-content .tab-about p {
 	font-family: 'AvenirMedium', sans-serif;
-	font-size: 0.85rem;
+	font-size: 1rem;
 	letter-spacing: 0rem;
 	text-align: justify;
 }
@@ -92,16 +90,16 @@ nav {
 
 .tab-content .tab-coming-soon .subscribe_area h6 {
 	font-size: 0.85rem;
-	color: #9b867e;
+	color: #f1ede4;
 }
 
 .subscribe_area {
-	margin-top: 1.6rem;
+	margin-top: 3.6rem;
 }
 
 .subscribe_area input[type="text"] {
 	width: 70%;
-	border: 1px solid #ffffff;
+	border: 1px solid #f1ede4;
 	background: transparent;
 	padding: 0.5rem 1rem 0.3rem;
 
@@ -115,16 +113,16 @@ nav {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #9b867e;
+  color: #f1ede4;
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #9b867e;
+  color: #f1ede4;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: #9b867e;
+  color: #f1ede4;
 }
 
 .insta, .insta a { 
@@ -132,9 +130,10 @@ nav {
 	color: #9b867e; 
 	font-size: 0.85rem; 
 	text-decoration: none;
+	cursor: pointer;
 }
 
-.insta span { line-height: 1.2rem; }
+.insta span { line-height: 1.2rem; vertical-align: sub;}
 
 .txt-bolder { font-weight: bold; }
 
@@ -142,34 +141,93 @@ nav {
 
 .img-mobile-background { position: relative; width: 100%; z-index: 1;}
 
+@media (max-width: 320px)  {
+	.nav-tabs .nav-link {
+	    font-size: 0.6rem;
+	}
+	.tab-content .tab-about p {
+	    font-size: 0.75rem;
+	    line-height: 1.5;
+	    margin-bottom: 0.6rem;
+	}
+	.tab-content .tab-coming-soon .title_area p {
+	    font-size: 1.2rem;
+	    letter-spacing: 0.1rem;
+	    line-height: 1.6rem;
+	}
+	.tab-content .tab-coming-soon .subscribe_area h6 {
+	    font-size: 0.7rem;
+	}
+	.subscribe_area {
+	    margin-top: 0rem;
+	}
+}
 
-@media all and (max-width: 576px) {
+@media (max-width: 576px) {
+	.tab-content {
+	    padding: 0.5rem 0rem;
+	}
 	.jumbotron {
 		background: none;
 		position: absolute;
 		top: 0;
 		left: 0;
 		z-index: 2;
+		padding: 0rem;
 	}
-	.insta, .insta a { 
+	.insta { 
 		margin: 0rem;
 		color: #9b867e;
 		font-size: 0.85rem;
 		text-decoration: none;
-		bottom: 0px;
 		padding: 0 0 2rem;
 		text-align: center;
-		background-color: #dbd1c7; 
+		background-color: #d7cdc3;
+		left: 0;
+		right: 0;
+		z-index: 999;
+		cursor: pointer;
+		position: absolute;
 	}
-	.nav-tabs .nav-link { min-width: auto; }
+	nav {
+	    margin: 1rem 0 0;
+	}
+	.nav-tabs .nav-link { min-width: 50%; margin: 0 auto; text-align: center; font-size:0.65rem;}
 	.tab-content .tab-coming-soon .title_area p {
-	    font-size: 1.4rem;
+	    font-size: 1.3rem;
 	    text-transform: uppercase;
-	    letter-spacing: 0.1rem;
-	    line-height: 2.2rem;
+	    letter-spacing: 0.02rem;
+	    line-height: 2rem;
+	    text-align: left;
+	}
+	.tab-content .tab-about p {
+	    font-size: 0.85rem;
+	}
+	.subscribe_area {
+		margin-top: 1.2rem;
 	}
 	.subscribe_area input[type="text"] {
-		width: 50%;
+		width: 64%;
 	}
 }
+
+@media (min-width: 1460px) {
+	.tab-content {
+	    padding: 2.2rem 0rem;
+	}
+	nav {
+	  margin: 6rem 0 0;
+	}
+	.insta, .insta a { 
+		margin-top: 6rem;
+	}
+	.subscribe_area {
+		margin-top: 1.6rem;
+	}
+	.tab-content {
+	  height: 20rem;
+	}
+}
+
+
 
