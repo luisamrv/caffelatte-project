@@ -2,17 +2,24 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| FrontEnd
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
-Route::get('/', function () {
+Route::get('/', 'FrontendController@getHomepage')->name('homepage');
+
+Route::get('/products', 'FrontendController@getAllProducts')->name('products');
+
+Route::get('/products/{product}', 'FrontendController@getProduct')->name('product');
+
+Route::get('/landing-home', function () {
     return view('welcome');
 });
 
+
+/*
+|--------------------------------------------------------------------------
+| Process Forms
+|--------------------------------------------------------------------------
+*/
 Route::post('/early-registration', 'FormsController@earlyRegistration')->name('process.early-registration');
