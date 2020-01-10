@@ -122,17 +122,15 @@ p {
 }
 
 .owl-theme .owl-dots .owl-dot span {
-   background: none repeat scroll 0 0 #ffffff;
-   border: 1px solid #29544d;
-   border-radius: 20px;
+   background: none repeat scroll 0 0 $primary-light-grey;
    display: block;
-   height: 14px;
+   height: .2rem;
    margin: 5px 6px;
-   width: 14px;
+   width: 2rem;
 }
 
 .owl-dots .owl-dot.active span, .owl-dots .owl-dot:hover span {
-  background: #29544d;
+  background: white;
 }
 
 .owl-carousel .owl-nav img {
@@ -141,6 +139,20 @@ p {
 
 .owl-novelties-ft.owl-theme .owl-dots {
   position: relative;
+}
+
+// Footer
+.footer {
+	background-color: $body-bg;
+	color: white;
+}
+
+.footer .ft-col ul {
+	padding: 0;
+}
+
+.footer .ft-col ul li {
+	list-style-type: none;
 }
 
 // Media Queries

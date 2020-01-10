@@ -6,7 +6,7 @@
         <div class="col-12 owl-main owl-carousel owl-slide owl-theme nopadding position-relative d-none d-sm-block">
             <div class="item">
                 <a href="">
-                    <img src="https://www.circu.net/img/slides/home-ambiences/mermaid-bed-circu-magical-furniture.jpg" width="1920" height="800" class="cd-dot img-fluid">
+                    <img src="https://pullcast.eu/img/new-homepage/main-slide/slide-2.jpg" width="1920" height="750" class="cd-dot img-fluid">
                     <div class="position-absolute text-container d-none d-sm-inline">
                       <h2>CLOUD COLLECTION</h2>
                       <h4>A DREAMY COLLECTION THAT WILL TAKE YOU TO THE CLOUDS</h4>
@@ -16,7 +16,7 @@
             </div>
             <div class="item">
                 <a href="">
-                    <img src="https://www.circu.net/img/slides/home-ambiences/mermaid-bed-circu-magical-furniture.jpg" width="1920" height="800" class="cd-dot img-fluid">
+                    <img src="https://pullcast.eu/img/new-homepage/main-slide/slide-2.jpg" width="1920" height="750" class="cd-dot img-fluid">
                     <div class="position-absolute text-container d-none d-sm-inline">
                       <h2>CLOUD COLLECTION</h2>
                       <h4>A DREAMY COLLECTION THAT WILL TAKE YOU TO THE CLOUDS</h4>
@@ -27,6 +27,9 @@
         </div>
     </div>
 </div>
+
+@include('includes.menu-visual')
+
 @endsection
 
 @section('meta')
