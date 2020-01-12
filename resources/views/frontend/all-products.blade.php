@@ -12,7 +12,13 @@
             </div>
 
             <div class="col-12">
-                products caffe latte
+                <div class="row">
+                    @foreach($brand_products as $brand_product)
+                        <div class="col-12 col-lg-3">
+                            {{ $brand_product->name }}
+                        </div>  
+                    @endforeach
+                </div>
             </div>
             
         </div>
@@ -22,13 +28,24 @@
     <div class="container-fluid py-3">
 
         <div class="row">
-            <div class="col-12 text-center">
-                <h2>NEUTRAL <b>NOME DE CATEGORIA</b></h2>
-            </div>
+            @foreach( $all_products as $key => $category)
+                <div class="col-12 text-center">
+                    <a name="{{ $key }}" href="#"></a>
+                    <h2>NEUTRAL <b>{{ ucwords($key) }}</b></h2>
+                </div>
+                
+                <div class="col-12">
+                    <div class="row">
+                        @foreach($category as $product)
+                            <div class="col-12 col-lg-3">   
+                                {{ $product->name }}
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
 
-            <div class="col-12">
-                products por categoria
-            </div>
+            @endforeach
+            
         </div>
     </div>
 
