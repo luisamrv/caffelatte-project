@@ -27,16 +27,17 @@ class FormsController extends Controller
                         ->withInput();
         } else {
 
-        	$user = new EarlyRegistration;
-        	$user->email = $request->email;
+            $user = new EarlyRegistration;
+            $user->email = $request->email;
 
-        	if(!$user->save()){
-            	return redirect()->back()->with('message', 'Please try again.');
-        	} else {
-        		Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new Early_Registration($request));
-        		return redirect()->back()->with('message', 'You are now subscribed');
-        	}
-        	
+            if(!$user->save()){
+                return redirect()->back()->with('message', 'Please try again.');
+            }  
+            else {
+                Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new Early_Registration($request));
+                return redirect()->back()->with('message', 'You are now subscribed to receive our updates.');
+            }
+            
         }
     }
 }
