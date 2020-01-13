@@ -7,10 +7,10 @@
                     <div class="container">
                         <div class="row">
                             <div class="topbar--menu col-12 col-sm-6 p-0">
-                                <a href="">BROCHURE</a>
-                                <a href="">PRICELIST</a>
-                                <a href="">ABOUT US</a>
-                                <a href="">TERMS & CONDITIONS</a>
+                                <a>BROCHURE</a>
+                                <a>PRICELIST</a>
+                                <a>ABOUT US</a>
+                                <a>TERMS & CONDITIONS</a>
                             </div>
     
                             <div class="topbar--icons col-12 col-sm-6 p-0 text-right">
@@ -40,43 +40,43 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header" href="#">ALL PRODUCTS</a>
+                                <a class="nav-link menu-header" href="{{route('products')}}">ALL PRODUCTS</a>
                             </li>
     
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header" href="#">UPHOLSTERY</a>
+                                <a class="nav-link menu-header" href="/products#upholstery">UPHOLSTERY</a>
                             </li>
     
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header" href="#">TABLES</a>
+                                <a class="nav-link menu-header" href="/products#tables">TABLES</a>
                             </li>
     
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header" href="#">MIRRORS</a>
+                                <a class="nav-link menu-header" href="/products#mirrors">MIRRORS</a>
                             </li>
     
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header" href="#">LIGHTING</a>
+                                <a class="nav-link menu-header" href="/products#lighting">LIGHTING</a>
                             </li>
     
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header" href="#">RUGS</a>
+                                <a class="nav-link menu-header" href="/products#rugs">RUGS</a>
                             </li>
     
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header" href="#">BROCHURE</a>
+                                <a class="nav-link menu-header">BROCHURE</a>
                             </li>
     
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header" href="#">NEWS & EVENTS</a>
+                                <a class="nav-link menu-header">NEWS & EVENTS</a>
                             </li>
     
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header" href="#">PRESS</a>
+                                <a class="nav-link menu-header">PRESS</a>
                             </li>
     
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header" href="#">CONTACT US</a>
+                                <a class="nav-link menu-header">CONTACT US</a>
                             </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -117,43 +117,43 @@
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header" href="#">ALL PRODUCTS</a>
+                        <a class="nav-link menu-header" href="{{route('products')}}">ALL PRODUCTS</a>
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header" href="#">UPHOLSTERY</a>
+                        <a class="nav-link menu-header" href="/products#upholstery">UPHOLSTERY</a>
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header" href="#">TABLES</a>
+                        <a class="nav-link menu-header" href="/products#tables">TABLES</a>
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header" href="#">MIRRORS</a>
+                        <a class="nav-link menu-header" href="/products#mirrors">MIRRORS</a>
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header" href="#">LIGHTING</a>
+                        <a class="nav-link menu-header" href="/products#lighting">LIGHTING</a>
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header" href="#">RUGS</a>
+                        <a class="nav-link menu-header" href="/products#rugs">RUGS</a>
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header" href="#">BROCHURE</a>
+                        <a class="nav-link menu-header">BROCHURE</a>
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header" href="#">NEWS & EVENTS</a>
+                        <a class="nav-link menu-header">NEWS & EVENTS</a>
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header" href="#">PRESS</a>
+                        <a class="nav-link menu-header">PRESS</a>
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header" href="#">CONTACT US</a>
+                        <a class="nav-link menu-header">CONTACT US</a>
                     </div>
                 </div>
             </div>

@@ -34,6 +34,11 @@ p {
 	font-size: 0.85rem;
 }
 
+.interested {
+    display: none !important;
+    visibility: hidden !important;
+}
+
 // Header
 .topbar a {
     font-weight: 400;
@@ -83,41 +88,45 @@ p {
 
 // Carousel
 .owl-carousel .text-container {
-	top: 0;
-	color: #FFFFFF;
-	margin-left: 9%;
-	max-width: 540px;
-	margin-top: 25%;
+	color: white;
+    margin-left: 6%;
+    max-width: 600px;
+    bottom: 12%;
 }
 
-.owl-carousel .text-container h2, .owl-carousel .text-container h4, .owl-carousel .text-container p {
-	font-weight: bolder;
-	color: #FFFFFF;
+.owl-carousel .text-container img {
+    width: auto;
+}
+
+.owl-carousel .text-container h2, 
+.owl-carousel .text-container h4, 
+.owl-carousel .text-container p {
+	font-weight: bold;
 	text-align: left;
 }
 
+.owl-carousel .text-container .title {
+    margin: 1rem 0;
+}
+
 .owl-carousel .text-container h2 {
-	font-family: 'RalewayBolder', sans-serif;
-	font-size: 1.6rem;
-	letter-spacing: 4px;
-    margin-bottom: 0;
+    letter-spacing: .02rem;
 }
 
-.owl-carousel .text-container h4 {
-	font-family: 'RalewayMedium', sans-serif;
-	font-size: 1rem;
-	letter-spacing: 4px;
-    margin-bottom: 0;
+.owl-carousel .text-container  h4 {
+    font-size: 0.85rem;
+    letter-spacing: .02rem;
+    margin: 0;
+    color: white;
 }
 
-.owl-carousel .text-container div {
-	font-family: 'RalewayMedium', sans-serif;
-	font-size: 0.9rem;
-	letter-spacing: 2px;
-	border-bottom: 1px solid #FFFFFF;
-	display: inline-block;
-	text-transform: uppercase;
-    margin-top: 20px;
+.owl-carousel .text-container .btn-border-full {
+    font-size: 0.75rem;
+    border: 1px solid #FFFFFF;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: .03rem;
+    padding: .4rem;
 }
 
 .owl-theme .owl-dots{
@@ -158,9 +167,18 @@ p {
 .caption {
     width: 100%;
     text-align: center;
-    font-size: 0.7rem;
-    margin-top: 5px;
+    font-size: 0.85rem;
+    margin-top: 1rem;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.caption-sub {
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -247,6 +265,19 @@ h2 {
     font-size: 1.2rem;
 }
 
+.btn-border-full {
+    border: 1px solid #332e2a;
+}
+
+.btn-get-price {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: .03rem;
+    padding: .3rem 0.5rem;
+}
+
 // Footer
 .footer h6 {
     letter-spacing: .03rem;
@@ -265,6 +296,10 @@ h2 {
 
 .footer .ft-col ul li {
 	list-style-type: none;
+}
+
+.footer .ft-col ul li a, .footer .ft-col ul li a:hover {
+    color: white;
 }
 
 .footer .form_subscribe_ft {
@@ -305,17 +340,75 @@ h2 {
 }
 
 
-// Media Queries
-@media (max-width: 320px)  {
 
+/*==================================================
+=            Bootstrap Media Queries             =
+==================================================*/
+
+
+/*==========  Mobile First Method  ==========*/
+
+// Extra small devices (portrait phones, less than 576px)
+@media only screen and (max-width: 575.98px) {
+    #main-slide {
+        padding-top: 60px;
+    }
+    .owl-carousel .text-container h2 {
+        font-size:1.1rem;
+        letter-spacing: 0rem;
+    }
+    .owl-carousel .text-container img.img_logo {
+        width: 120px;
+    }
+    .footer {
+        text-align: center;
+    }
 }
 
-@media (max-width: 576px) {
-
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 576px) {
+    #main-slide {
+        padding-top: 60px;
+    }
+    .owl-carousel .text-container h2 {
+        font-size:1.1rem;
+        letter-spacing: 0rem;
+    }
+    .owl-carousel .text-container img.img_logo {
+        width: 120px;
+    }
+    .footer {
+        text-align: center;
+    }
 }
 
-@media (min-width: 1460px) {
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+}
 
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+    #main-slide {
+        padding-top: 0px;
+    }
+    .owl-carousel .text-container h2 {
+        letter-spacing: 0.02rem;
+    }
+    .owl-carousel .text-container img.img_logo {
+        width: 150px;
+    }
+    .footer {
+        text-align: left;
+    }
+    
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1799px) {
 }
 
 

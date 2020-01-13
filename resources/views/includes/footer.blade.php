@@ -1,8 +1,8 @@
 <div class="container-fluid footer">
     <div class="row">
-        <div class="col-12 col-lg-10 py-3">
+        <div class="col-12 col-lg-12 py-3">
             <div class="row">
-                <div class="col-12 col-lg-2 ft-col">
+                <div class="col-12 col-md-4 col-lg-2 ft-col my-3">
                     <h6>THE BRAND</h6>
                     <ul>
                         <li><a>About Us</a></li>
@@ -12,18 +12,18 @@
                     </ul>
                 </div>
 
-                <div class="col-12 col-lg-2 ft-col">
+                <div class="col-12 col-md-4 col-lg-2 ft-col my-3">
                     <h6>ALL PRODUCTS</h6>
                     <ul>
-                        <li><a>Upholstery</a></li>
-                        <li><a>Tables</a></li>
-                        <li><a>Mirrors</a></li>
-                        <li><a>Lighting</a></li>
-                        <li><a>Rugs</a></li>
+                        <li><a href="/products#upholstery">Upholstery</a></li>
+                        <li><a href="/products#tables">Tables</a></li>
+                        <li><a href="/products#mirrors">Mirrors</a></li>
+                        <li><a href="/products#lighting">Lighting</a></li>
+                        <li><a href="/products#rugs">Rugs</a></li>
                     </ul>
                 </div>
 
-                <div class="col-12 col-lg-2 ft-col">
+                <div class="col-12 col-md-4 col-lg-2 ft-col my-3">
                     <h6>COLLECTIONS</h6>
                     <ul>
                         <li><a>Press</a></li>
@@ -34,21 +34,22 @@
                     </ul>
                 </div>
 
-                <div class="col-12 col-lg-3 ft-col">
+                <div class="col-12 col-md-6 col-lg-3 ft-col my-3">
                     <h6>IN PARTNERSHIP WITH</h6>
                     <ul>
-                        <li><a></a></li>
-                        <li><a></a></li>
-                        <li><a></a></li>
+                        <a href="https://delightfull.eu/en" target="_blank"><img src="./img/icons/partners/logo-delightfull.png" alt="" class="mr-2" style="width:90px;"></a>
+                        <a href="http://essentialhome.eu/" target="_blank"><img src="./img/icons/partners/logo-essential-home.png" alt="" class="mx-2"></a>
+                        <a href="https://brabbu.com/" target="_blank"><img src="./img/icons/partners/logo-brabbu.png" alt="" class="mx-2" style="width:80px;"></a>
                     </ul>
                 </div>
 
-                <div class="col-12 col-lg-3 ft-col">
+                <div class="col-12 col-md-6 col-lg-2 ft-col my-3">
                     <h6>SUBSCRIBE NEWSLETTER</h6>
                     <div>
                         <form action="" method="post" class="form_subscribe_ft">
                             @csrf()
-                            <input type="email" placeholder="Email Address" class="form-control">
+                            <input type="text" name="interested" class="form-control interested">
+                            <input type="email" name="email" placeholder="Email Address" class="form-control">
                             <button style="background-color: transparent;color: white;width:auto;" type="submit">
                                 <img style="filter:invert(100%)" src="https://pullcast.eu/img/right-arrow.png" class="img-fluid text-center">
                             </button>

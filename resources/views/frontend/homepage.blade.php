@@ -3,24 +3,31 @@
 @section('main-content')
 <div class="container-fluid" id="main-slide">
     <div class="row">
-        <div class="col-12 p-0 owl-main owl-carousel owl-slide owl-theme nopadding position-relative d-none d-sm-block">
+        <div class="col-12 p-0 owl-main owl-carousel owl-slide owl-theme nopadding position-relative">
             <div class="item">
                 <a href="">
-                    <img src="https://pullcast.eu/img/new-homepage/main-slide/slide-2.jpg" width="1920" height="750" class="cd-dot img-fluid">
-                    <div class="position-absolute text-container d-none d-sm-inline">
-                      <h2>CLOUD COLLECTION</h2>
-                      <h4>A DREAMY COLLECTION THAT WILL TAKE YOU TO THE CLOUDS</h4>
-                      <div>Discover More <i class="fas fa-caret-right"></i> </div>
+                    <img src="./img/homepage/slide/maison-et-objet-2020.jpg" width="1920" height="800" class="cd-dot img-fluid d-none d-md-block">
+                    <img src="./img/homepage/slide/maison-et-objet-2020-mobile.jpg" width="768" height="600" class="cd-dot img-fluid d-block d-md-none">
+                    <div class="position-absolute text-container">
+                        <img src="./img/landing/events/maison-et-objet-paris-jan-2020/maison-et-objet-logo.png" alt="" class="img_logo">
+                        <div class="title">
+                            <h2>LOOKING FOR TRENDY MODERN DESIGN PIECES?</h2>
+                            <h4>VISIT US AT HALL 8, STAND C13 IN MAISON ET OBJET 2020</h4>
+                        </div>
+                        <div class="btn-border-full">Discover More</div>
                   </div>
                 </a>
             </div>
             <div class="item">
                 <a href="">
-                    <img src="https://pullcast.eu/img/new-homepage/main-slide/slide-2.jpg" width="1920" height="750" class="cd-dot img-fluid">
-                    <div class="position-absolute text-container d-none d-sm-inline">
-                      <h2>CLOUD COLLECTION</h2>
-                      <h4>A DREAMY COLLECTION THAT WILL TAKE YOU TO THE CLOUDS</h4>
-                      <div>Discover More <i class="fas fa-caret-right"></i> </div>
+                    <img src="./img/homepage/slide/new-products-caffe-latte.jpg" width="1920" height="800" class="cd-dot img-fluid d-none d-md-block">
+                    <img src="./img/homepage/slide/new-products-caffe-latte-mobile.jpg" width="768" height="600" class="cd-dot img-fluid d-block d-md-none">
+                    <div class="position-absolute text-container">
+                        <img src="./img/landing/events/maison-et-objet-paris-jan-2020/maison-et-objet-logo.png" alt="" class="img_logo">
+                        <div class="title">
+                            <h2>NEUTRAL DESIGNS FOR FUNCTIONAL INTERIORS WITH MODERN AESTHETICS</h2>
+                        </div>
+                        <div class="btn-border-full">Discover More</div>
                   </div>
                 </a>
             </div>
