@@ -41,4 +41,8 @@ class FrontendController extends Controller
         $product = ProductRepository::getProduct($product);
         return view('includes.forms.modal-product-price',compact('product'));
     }
+
+    public function getModalBrochure(){
+        return view('includes.forms.modal-download-brochure');
+    }
 }

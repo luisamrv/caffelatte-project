@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ProductPrice extends Mailable
+class DownloadBrochure extends Mailable
 {
     use Queueable, SerializesModels;
     public $request;
@@ -30,7 +30,7 @@ class ProductPrice extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.to-brand.product-price')->with([
+        return $this->view('mail.to-brand.download-brochure')->with([
             'product_name' =>  $this->request->get('product_name'),
             'name' =>  $this->request->get('name'),
             'email' =>  $this->request->get('email'),
@@ -39,6 +39,6 @@ class ProductPrice extends Mailable
             'city' =>  $this->request->get('city'),
             'occupation' => $this->request->get('occupation'),
             'company' => $this->request->get('company')
-        ])->from($this->request->get('email'))->bcc(env('BRAND_DEVELOPER_EMAIL'))->subject('Caffe Latte | Get Price');
+        ])->from($this->request->get('email'))->bcc(env('BRAND_DEVELOPER_EMAIL'))->subject('Caffe Latte | Download Brochure');
     }
 }

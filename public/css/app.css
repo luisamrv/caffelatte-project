@@ -11474,10 +11474,17 @@ p {
 }
 
 .owl-carousel .text-container {
-  color: white;
   margin-left: 6%;
   max-width: 600px;
   bottom: 12%;
+}
+
+.owl-carousel .text-container .text-light {
+  color: white;
+}
+
+.owl-carousel .text-container .text-dark {
+  color: #3e2d1d;
 }
 
 .owl-carousel .text-container img {
@@ -11503,12 +11510,11 @@ p {
   font-size: 0.85rem;
   letter-spacing: 0.02rem;
   margin: 0;
-  color: white;
 }
 
 .owl-carousel .text-container .btn-border-full {
   font-size: 0.75rem;
-  border: 1px solid #FFFFFF;
+  border: 1px solid;
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 0.03rem;
