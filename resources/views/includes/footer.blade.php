@@ -37,18 +37,27 @@
                 <div class="col-12 col-md-6 col-lg-3 ft-col my-3">
                     <h6>IN PARTNERSHIP WITH</h6>
                     <ul>
-                        <a href="https://delightfull.eu/en" target="_blank"><img src="./img/icons/partners/logo-delightfull.png" alt="" class="mr-2" style="width:90px;"></a>
-                        <a href="http://essentialhome.eu/" target="_blank"><img src="./img/icons/partners/logo-essential-home.png" alt="" class="mx-2"></a>
-                        <a href="https://brabbu.com/" target="_blank"><img src="./img/icons/partners/logo-brabbu.png" alt="" class="mx-2" style="width:80px;"></a>
+                        <li>
+                            <a href="https://delightfull.eu/en" target="_blank"><img src="./img/icons/partners/logo-delightfull.png" alt="" style="width:90px;"></a>
+                        </li>
+                        <li>
+                            <a href="http://essentialhome.eu/" target="_blank"><img src="./img/icons/partners/logo-essential-home.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://brabbu.com/" target="_blank"><img src="./img/icons/partners/logo-brabbu.png" alt="" style="width:80px;"></a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-3 ft-col my-3">
                     <h6>SUBSCRIBE NEWSLETTER</h6>
                     <div>
-                        <form action="" method="post" class="form_subscribe_ft">
+                        <form action="{{route('process.subscribe')}}" method="post" class="form_subscribe_ft">
                             @csrf()
                             <input type="text" name="interested" class="form-control interested">
+                            <input type="hidden" name="origin" class="origin"/>
+                            <input type="hidden" name="referrer" class="referrer"/>
+                            <input type="hidden" name="lead_path" class="lead_path"/>
                             <input type="email" name="email" placeholder="Email Address" class="form-control">
                             <button style="background-color: transparent;color: white;width:auto;" type="submit">
                                 <img style="filter:invert(100%)" src="https://pullcast.eu/img/right-arrow.png" class="img-fluid text-center">

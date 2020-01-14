@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <!-- menu desktop -->
-        <div class="col-12 d-none d-lg-block">
+        <div class="col-12 d-none d-lg-block bottom-shaded">
             <div class="col-12 header-affix topbar mt-1">
                 <div style="width: 100%;bottom: 0;z-index: 999;" data-spy="affix" data-offset-top="38" class="affix-top">
                     <div class="container">
@@ -14,11 +14,11 @@
                             </div>
     
                             <div class="topbar--icons col-12 col-sm-6 p-0 text-right">
-                                <a target="_blank" href=""><i class="fab fa-whatsapp"></i></a>
-                                <a target="_blank" href=""><i class="far fa-envelope"></i></a>
-                                <a target="_blank" href=""><i class="fas fa-phone"></i></a>
-                                <a target="_blank" href=""><i class="fab fa-instagram"></i></a>
-                                <a target="_blank" href=""><i class="fas fa-share-alt"></i></a>
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone=351911780428&amp;text=Hello, I'm interested in CAFFE LATTE products. Can you help me?"><i class="fab fa-whatsapp"></i></a>
+                                <a target="_blank" href="mailto:info@caffelattehome.com"><i class="far fa-envelope"></i></a>
+                                <a target="_blank" href="tel:+351911780428"><i class="fas fa-phone"></i></a>
+                                <a target="_blank" href="https://www.instagram.com/caffelattehome/"><i class="fab fa-instagram"></i></a>
+
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
             </div>
     
             <div class="col-12 text-center">
-                <a href="https://www.caffelattehome.com/">
+                <a href="{{route('homepage')}}">
                     <img src="./img/caffe-latte-logo.png" class="img-fluid logo" alt="">
                 </a>
             </div>

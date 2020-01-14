@@ -19,6 +19,7 @@ use App\EarlyRegistration;
 use App\Mail\ProductPrice;
 use App\Mail\DownloadBrochure;
 use App\Mail\Early_Registration;
+use App\Mail\Subscriber;
 
 class FormsController extends Controller
 {
@@ -97,7 +98,9 @@ class FormsController extends Controller
             $impact->send($jsonContent); */
 
 
-            $response = salesForce($request, 'Lead', 'Website', 'Forms', 'Price', ' ', "Caffe Latte ".$request->get('product_name'));
+            //$response = salesForce($request, 'Lead', 'Website', 'Forms', 'Price', ' ', $request->get('product_name'));
+
+            $response = true;
 
 
             if($response == true){
@@ -163,12 +166,52 @@ class FormsController extends Controller
             $impact->send($jsonContent); */
 
 
-            $response = salesForce($request, 'Lead', 'Website', 'Forms', 'Price', ' ', "Caffe Latte ".$request->get('product_name'));
+            //$response = salesForce($request, 'Lead', 'Website', 'Forms', 'Brochure', ' ', "Download Brochure New Products");
+
+            $response = true;
 
 
             if($response == true){
 
                 Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new DownloadBrochure($request));
+
+                return redirect()->back()->with('message', 'Your request was successful');
+            } else {
+
+                return redirect()->back()->with('message', 'Please try again');
+
+            }
+
+        }
+
+    }
+
+    public function subscribe(Request $request){
+
+        if($request->get('interested') !== null){
+            return redirect('https://www.google.com/');
+            die();
+        }
+
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        } else {
+
+
+            //$response = salesForce($request, 'Lead', 'Website', 'Forms', 'Subscriber', ' ', "");
+
+            $response = true;
+
+
+            if($response == true){
+
+                Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new Subscriber($request));
 
                 return redirect()->back()->with('message', 'Your request was successful');
             } else {

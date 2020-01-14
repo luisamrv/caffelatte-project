@@ -366,7 +366,7 @@ function salesForce(Request $request, $lead_level, $source, $category, $type, $s
      $req .= "&00Nb000000A1ZxG=" . urlencode($category);
      //type
      $req .= "&00Nb000000A1ZxV=" . urlencode($type);
-     $req .= "&00Nb000000A9e0M=" . "Covet House";
+     $req .= "&00Nb000000A9e0M=" . "Caffe Latte";
      $req .= "&debug=" . urlencode("0");
      $req .= "&oid=" . urlencode("00Db0000000ckMX");
      $url = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';

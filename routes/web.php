@@ -32,3 +32,5 @@ Route::post('/early-registration', 'FormsController@earlyRegistration')->name('p
 Route::post('/process/product-price/{product}', 'FormsController@productPrice')->name('process.product-price');
 
 Route::post('/process/download-brochure/', 'FormsController@downloadBrochure')->name('process.download-brochure');
+
+Route::post('/process/subscribe', 'FormsController@subscribe')->name('process.subscribe');

@@ -5,11 +5,14 @@
     @include('includes.menu-visual')
 
     <div class="container-fluid section-bg-latte pt-5">
+
+        @include('includes.forms.message-feedback')
+
         
         <div class="row">
             <div class="col-12 text-center">
                 <a name="exclusive-products" href="#"></a>
-                <h2>CAFFE LATTE <b>EXCLUSIVE PRODUCTS</b></h2>
+                <h2>CAFFE LATTE <b>NEW PRODUCTS</b></h2>
             </div>
 
             <div class="col-12">
@@ -17,11 +20,14 @@
                     <div class="col-12 p-0 owl-carousel owl-slide owl-theme nopadding position-relative pb-5">
                         @foreach($brand_products as $brand_product)
                             <div class="item my-3">
-                                <a>
+                            <a rel="modal:open" href="{{route('modal-product-price', ['product' => $brand_product->slug] )}}">
                                     <img src="./img/products/exclusive-products/{{ $brand_product->slug }}.png" alt="" class="img-fluid">
                                     <div class="caption">{{ $brand_product->name }}</div>
                                     <div class="caption-sub"> {{ ucwords($brand_product->sub_category->sub_category_languages[0]->name) }}</div>
                                 </a>
+                                <div class="text-center">
+                                    <a rel="modal:open" href="{{route('modal-product-price', ['product' => $brand_product->slug] )}}" class="btn-border-full btn-get-price">GET PRICE</a>
+                                </div>
                             </div>  
                         @endforeach
                     </div>
@@ -88,11 +94,6 @@
 
 @section('footer-includes')
 <script>
-    $(document).on("click", ".open-AddBookDialog", function () {
-        var myBookId = $(this).data('id');
-        $(".modal-body #bookId").val( myBookId );
-    });
-
     $('.owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
@@ -103,7 +104,7 @@
         fluidSpeed: 900,
         autoplaySpeed: 900,
         responsive: {
-            0: {items: 1},
+            0: {items: 2},
             600: {items: 3},
             768: {items: 4}
         }

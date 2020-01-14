@@ -40,6 +40,12 @@ p {
 }
 
 // Header
+.bottom-shaded {
+    box-shadow: 0px 3px 10px 0px rgba(196,196,196,1);
+    -webkit-box-shadow: 0px 3px 10px 0px rgba(196,196,196,1);
+    -moz-box-shadow: 0px 3px 10px 0px rgba(196,196,196,1);
+}
+
 .topbar a {
     font-weight: 400;
 }
@@ -98,7 +104,7 @@ p {
 }
 
 .owl-carousel .text-container .text-dark {
-    color: #3e2d1d;
+    color: $primary-color;
 }
 
 .owl-carousel .text-container img {
@@ -261,7 +267,7 @@ p {
 // All Products
 
 .section-bg-latte {
-    background-color: $bg-light-pink;
+    background-color: $latte-bg;
     color: white;
 }
 
@@ -348,6 +354,7 @@ h2 {
 // Modal
 .modal {
     width: 40%;
+    height: auto;
     padding: 15px 30px;
     display: inline-block;
     vertical-align: middle;
@@ -474,6 +481,8 @@ h2 {
     background: url(/img/icons/forms/close-icon.png) no-repeat 0 0;
 }
 
+.blocker { z-index: 1050; }
+
 .modal input.name { background: url('/img/icons/forms/person-icon.png') 0px center no-repeat; }
 .modal input.email { background: url('/img/icons/forms/email-icon.png') 0px center no-repeat; }
 .modal input.phone { background: url('/img/icons/forms/phone-icon.png') 0px center no-repeat; }
@@ -483,6 +492,7 @@ h2 {
 .modal input.company { background: url('/img/icons/forms/occupation-icon.png') 0px center no-repeat; }
 .modal select.occupation { background: url('/img/icons/forms/occupation-icon.png') 0px center no-repeat; -webkit-appearance: none;
   -moz-appearance: none;}
+
 /**
  * PARSLEY
  * ----------------------------------------------------------------------------
@@ -520,6 +530,7 @@ ul.parsley-errors-list {
     .footer {
         text-align: center;
     }
+    .modal { width: 90%; }
 }
 
 /* Extra Small Devices, Phones */
@@ -537,6 +548,7 @@ ul.parsley-errors-list {
     .footer {
         text-align: center;
     }
+    .modal { width: 90%; }
 }
 
 /* Small Devices, Tablets */
@@ -557,6 +569,7 @@ ul.parsley-errors-list {
     .footer {
         text-align: left;
     }
+    .modal { width: 40%; }
     
 }
 
