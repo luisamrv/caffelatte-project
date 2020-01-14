@@ -11,7 +11,7 @@
         <!-- Fonts -->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css" />
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" />
-        <link rel="stylesheet" type="text/css" href="/css/jquery.modal.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
         <link href="/css/app.css" rel="stylesheet">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -37,6 +37,7 @@
     </head>
 
     <body>
+        <script type="text/javascript" src="/js/megaTracker.js"></script>
 
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DVMRPH"
@@ -48,7 +49,9 @@
             @yield('main-content')
 
         @include('includes.footer')
-
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <script src="/js/parsley.min.js"></script>
     </body>
 
 </html>

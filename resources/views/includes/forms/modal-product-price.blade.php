@@ -7,7 +7,7 @@
 
 <body>
 
-<form method="post" class="form-popup form-parsley" action="{{ route('process.product-price', ['name' => $product->slug] ) }}">
+<form method="post" class="form-popup form-parsley" action="{{ route('process.product-price', ['product' => $product->slug] ) }}">
 
   <div class="row">
 

@@ -284,7 +284,7 @@ h2 {
 }
 
 .footer {
-	background-color: $body-bg;
+	background-color: $footer-bg;
 	color: white;
 }
 
@@ -337,6 +337,157 @@ h2 {
     color: white;
     width: auto;
     box-shadow: none;
+}
+
+// Modal
+.modal {
+    width: 40%;
+    padding: 15px 30px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background: #fff;
+    -webkit-box-shadow: 0 0 10px #000;
+    -moz-box-shadow: 0 0 10px #000;
+    -o-box-shadow: 0 0 10px #000;
+    -ms-box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 10px #000;
+    text-align: left;
+  }
+
+  .modal h1{
+    color: #3c312d;
+    font-size: 27px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    padding: 0px 5px 0px 5px;
+    margin: 18px 0px 0px 0px;
+    text-align: center;
+  }
+  
+  .modal h3{
+    color: #3c312d;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0px 5px 0px 0px;
+    margin: 6px 0px 18px 0px;
+    text-align: center;
+  }
+
+  .modal .input-block {
+    margin: 0px 0px 26px;
+    width: 100%;
+  }
+  
+  .modal .input-block-half {
+    margin: 0px 0px 26px;
+    width: 46%;
+  }
+  
+  .modal span{
+    margin: 0px;
+    color: #81807e;
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    float: left;
+  }
+  
+  .modal input {
+    width: 100%;
+    height: 24px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+    padding: 0px 0px 0px 22px;
+    color: #3c312d;;
+    background-color: #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-bottom: 1px solid #b9b9b9;
+  }
+  
+  .modal select {
+    width: 100%;
+    height: 24px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+    padding: 0px 0px 0px 22px;
+    color: #3c312d;;
+    background-color: #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-bottom: 1px solid #b9b9b9;
+  }
+  
+  .modal textarea {
+    width: 100%;
+    min-height: 50px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+    margin-top: 4px;
+    padding: 0px 4px 0px 4px;
+    color: #3c312d;;
+    background-color: #FFFFFF;
+    border-top: 1px solid #b9b9b9;
+    border-right: 1px solid #b9b9b9;
+    border-left: 1px solid #b9b9b9;
+    border-bottom: 1px solid #b9b9b9;
+  }
+  
+  .modal button[type=submit] {
+    width: 100%;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    padding: 8px 0px 7px 0px;
+    margin: 10px 0px;
+    border-color: #3c312d;
+    color: #3c312d;
+  }
+
+  .modal button[type=submit]:hover {
+    background-color: #3c312d;
+    color: #ffffff;
+  }
+
+  .modal a.close-modal {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    background: url(/img/icons/forms/close-icon.png) no-repeat 0 0;
+}
+
+.modal input.name { background: url('/img/icons/forms/person-icon.png') 0px center no-repeat; }
+.modal input.email { background: url('/img/icons/forms/email-icon.png') 0px center no-repeat; }
+.modal input.phone { background: url('/img/icons/forms/phone-icon.png') 0px center no-repeat; }
+.modal select.country { background: url('/img/icons/forms/country-icon.png') 0px center no-repeat; -webkit-appearance: none;
+  -moz-appearance: none;}
+.modal input.city { background: url('/img/icons/forms/city-icon.png') 0px center no-repeat; }
+.modal input.company { background: url('/img/icons/forms/occupation-icon.png') 0px center no-repeat; }
+.modal select.occupation { background: url('/img/icons/forms/occupation-icon.png') 0px center no-repeat; -webkit-appearance: none;
+  -moz-appearance: none;}
+/**
+ * PARSLEY
+ * ----------------------------------------------------------------------------
+ */
+ul.parsley-errors-list {
+  list-style-type: none;
+  padding: 4px 0px 0px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: $primary-light-grey;
+  font-weight: bold;
 }
 
 

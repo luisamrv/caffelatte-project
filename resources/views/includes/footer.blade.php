@@ -43,7 +43,7 @@
                     </ul>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-2 ft-col my-3">
+                <div class="col-12 col-md-6 col-lg-3 ft-col my-3">
                     <h6>SUBSCRIBE NEWSLETTER</h6>
                     <div>
                         <form action="" method="post" class="form_subscribe_ft">
