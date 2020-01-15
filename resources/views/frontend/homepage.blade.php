@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('main-content')
+@include('includes.forms.message-feedback')
 <div class="container-fluid" id="main-slide">
     <div class="row">
         <div class="col-12 p-0 owl-main owl-carousel owl-slide owl-theme nopadding position-relative">
@@ -9,7 +10,7 @@
                     <img src="./img/homepage/slide/maison-et-objet-2020.jpg" width="1920" height="800" class="cd-dot img-fluid d-none d-md-block">
                     <img src="./img/homepage/slide/maison-et-objet-2020-mobile.jpg" width="768" height="600" class="cd-dot img-fluid d-block d-md-none">
                     <div class="position-absolute text-container text-light">
-                        <img src="./img/landing/events/maison-et-objet-paris-jan-2020/maison-et-objet-logo.png" alt="" class="img_logo">
+                        <img src="./img/landing/events/maison-et-objet-paris-jan-2020/maison-et-objet-logo.png" alt="" class="d-none d-md-inline img_logo">
                         <div class="title">
                             <h2>LOOKING FOR TRENDY MODERN DESIGN PIECES?</h2>
                             <h4>VISIT US AT HALL 8, STAND C13 IN MAISON ET OBJET 2020</h4>
@@ -22,9 +23,9 @@
                 <a href="{{route('products')}}">
                     <img src="./img/homepage/slide/new-products-caffe-latte.jpg" width="1920" height="800" class="cd-dot img-fluid d-none d-md-block">
                     <img src="./img/homepage/slide/new-products-caffe-latte-mobile.jpg" width="768" height="600" class="cd-dot img-fluid d-block d-md-none">
-                    <div class="position-absolute text-container text-dark">
+                    <div class="position-absolute text-container text-light">
                         <div class="title">
-                            <h2>NEUTRAL DESIGNS FOR FUNCTIONAL INTERIORS WITH MODERN AESTHETICS</h2>
+                            <h2>NEUTRAL DESIGNS FOR FUNCTIONAL INTERIORS <br> WITH MODERN AESTHETICS</h2>
                         </div>
                         <div class="btn-border-full">Discover More</div>
                   </div>
@@ -34,7 +35,7 @@
                 <a rel="modal:open" href="{{route('modal-download-brochure')}}">
                     <img src="./img/homepage/slide/brochure-caffe-latte.jpg" width="1920" height="800" class="cd-dot img-fluid d-none d-md-block">
                     <img src="./img/homepage/slide/brochure-caffe-latte-mobile.jpg" width="768" height="600" class="cd-dot img-fluid d-block d-md-none">
-                    <div class="position-absolute text-container text-dark">
+                    <div class="position-absolute text-container text-light">
                         <div class="title">
                             <h2>THERE'S BEAUTY IN SIMPLICITY</h2>
                             <h4>CAFFE LATTE CREATED A COLLECTION OF FURNITURE, LIGHTING AND ACCESSORIES</h4>

@@ -4,10 +4,10 @@ use Illuminate\Http\Request;
 
 function checkCurrency($value){
     if ($value == "United States"){
-        $currency = 2;
+        $currency = "dollars";
     }
     else {
-        $currency = 1;
+        $currency = "euros";
     }
 
     return $currency;
@@ -407,7 +407,7 @@ class ImpactData
     {
 
      $this->source=1;
-     $this->token='R5x8jhBRKUGXmpTLNT9BxYXLfLRfuRzP';
+     $this->token='LgjpTKaipQWf9HQBMf56GF7UMQb4f0gs';
      //$this->hostEndPoint='http://176.221.37.155/api/register';
      $this->hostEndPoint='https://impact.webuzz.com.pt/api/register';
      $this->hostName='impact.webuzz.com.pt';

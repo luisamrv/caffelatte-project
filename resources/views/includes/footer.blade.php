@@ -38,13 +38,13 @@
                     <h6>IN PARTNERSHIP WITH</h6>
                     <ul>
                         <li>
-                            <a href="https://delightfull.eu/en" target="_blank"><img src="./img/icons/partners/logo-delightfull.png" alt="" style="width:90px;"></a>
+                            <a href="https://delightfull.eu/en" target="_blank"><img src="/img/icons/partners/logo-delightfull.png" alt="" style="height:50px;"></a>
                         </li>
                         <li>
-                            <a href="http://essentialhome.eu/" target="_blank"><img src="./img/icons/partners/logo-essential-home.png" alt=""></a>
+                            <a href="http://essentialhome.eu/" target="_blank"><img src="/img/icons/partners/logo-essential-home.png" alt="" style="height:50px;"></a>
                         </li>
                         <li>
-                            <a href="https://brabbu.com/" target="_blank"><img src="./img/icons/partners/logo-brabbu.png" alt="" style="width:80px;"></a>
+                            <a href="https://brabbu.com/" target="_blank"><img src="/img/icons/partners/logo-brabbu.png" alt="" style="height:50px;"></a>
                         </li>
                     </ul>
                 </div>
@@ -69,12 +69,6 @@
         </div>
     </div>
 </div>
-
-<script type="text/javascript">
-    $(".origin").val(tracker.url_origin);
-    $(".referrer").val(tracker.referrer);
-    $(".lead_path").val(tracker.flow);
-</script>
 
 <script type="text/javascript" src="https://www.circu.net/js/jquery.min.js" ></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>

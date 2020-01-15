@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <script type="text/javascript" src="/js/megaTracker.js"></script>
   <script>var tracker=getUrl();</script>
 </head>
 
@@ -84,6 +85,7 @@
 
 </form>
 
+<script src="/js/parsley.min.js"></script>
 <script type="text/javascript">
   $(".origin").val(tracker.url_origin);
   $(".referrer").val(tracker.referrer);

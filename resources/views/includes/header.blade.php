@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <!-- menu desktop -->
-        <div class="col-12 d-none d-lg-block bottom-shaded">
+        <div class="col-12 d-none d-lg-block bottom-shaded" style="z-index:2;">
             <div class="col-12 header-affix topbar mt-1">
                 <div style="width: 100%;bottom: 0;z-index: 999;" data-spy="affix" data-offset-top="38" class="affix-top">
                     <div class="container">
@@ -27,7 +27,7 @@
     
             <div class="col-12 text-center">
                 <a href="{{route('homepage')}}">
-                    <img src="./img/caffe-latte-logo.png" class="img-fluid logo" alt="">
+                    <img src="/img/caffe-latte-logo.png" class="img-fluid logo" alt="">
                 </a>
             </div>
     
@@ -88,7 +88,7 @@
         <!-- menu mobile -->
         <div class="col-12 d-block d-lg-none menu_mobile_fixed">
             <div class="row">
-                <div class="col-4">
+                <div class="col-3">
                     <button style="margin: 0;padding-left: 0;display:block" type="button" class="navbar-toggle collapsed teste-collapse" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar top-bar"></span>
@@ -97,11 +97,13 @@
                     </button>
                 </div>
 
-                <div class="col-4 text-center">
-                    <img src="./img/caffe-latte-logo.png" class="img-fluid center-block" style="max-width: 150px;">
+                <div class="col-6 text-center">
+                    <a href="{{route('homepage')}}">
+                        <img src="/img/caffe-latte-logo.png" class="center-block" style="width:100%;max-width:220px;">
+                    </a>
                 </div>
 
-                <div class="col-4 text-right">
+                <div class="col-3 text-right">
                     <a target="_blank" href=""><i class="fab fa-whatsapp"></i></a>
                     <a target="_blank" href=""><i class="far fa-envelope"></i></a>
                     <a target="_blank" href=""><i class="fab fa-instagram"></i></a>

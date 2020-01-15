@@ -23,30 +23,6 @@ use App\Mail\Subscriber;
 
 class FormsController extends Controller
 {
-    public function earlyRegistration(Request $request) {
-    	$validator = Validator::make($request->all(), [
-            'email' => 'required|email|unique:early_registrations'
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()
-                        ->withErrors($validator)
-                        ->withInput();
-        } else {
-
-            $user = new EarlyRegistration;
-            $user->email = $request->email;
-
-            if(!$user->save()){
-                return redirect()->back()->with('message', 'Please try again.');
-            }  
-            else {
-                Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new Early_Registration($request));
-                return redirect()->back()->with('message', 'You are now subscribed to receive our updates.');
-            }
-            
-        }
-    }
 
     public function productPrice(Request $request, $product){
 
@@ -74,7 +50,7 @@ class FormsController extends Controller
         } else {
 
 
-            /* $impact = new \ImpactData();
+            $impact = new \ImpactData();
             $jsonContent = [
                 'email'           => $request->get('email'),
                 'first_name'      => $request->get('name'),
@@ -90,24 +66,21 @@ class FormsController extends Controller
                 'lead_path'       => $request->get('lead_path'),
                 'more_info'       => $request->get('product_name'),
                 'cta'             => 'Get Price',
-                'cta_color'       => 'Green',
+                'cta_color'       => 'Brown',
                 'page'            => 'Product',
                 'page_position'   => 'Center',
             ];
 
-            $impact->send($jsonContent); */
+            $impact->send($jsonContent); 
 
-
-            //$response = salesForce($request, 'Lead', 'Website', 'Forms', 'Price', ' ', $request->get('product_name'));
-
-            $response = true;
-
+            $response = salesForce($request, 'Lead', 'Website', 'Forms', 'Price', ' ', $request->get('product_name'));
 
             if($response == true){
 
-                Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new ProductPrice($request));
+                //Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new ProductPrice($request));
 
-                return redirect()->back()->with('message', 'Your request was successful');
+                return redirect()->route('actions.get-price');
+                
             } else {
 
                 return redirect()->back()->with('message', 'Please try again');
@@ -142,7 +115,7 @@ class FormsController extends Controller
         } else {
 
 
-            /* $impact = new \ImpactData();
+            $impact = new \ImpactData();
             $jsonContent = [
                 'email'           => $request->get('email'),
                 'first_name'      => $request->get('name'),
@@ -150,32 +123,287 @@ class FormsController extends Controller
                 'city'            => $request->get('city'),
                 'company'         => $request->get('company'),
                 'phone'           => $request->get('phone'),
-                'form'            => 'Price',
-                'lead_type'       => 'Lead Commercial',
+                'form'            => 'Download',
+                'lead_type'       => 'Lead',
                 'url_origin'      => $request->get('origin'),
                 'url_converted'   => $_SERVER['HTTP_REFERER'],
                 'referrer'        => $request->get('referrer'),
                 'lead_path'       => $request->get('lead_path'),
                 'more_info'       => $request->get('product_name'),
-                'cta'             => 'Get Price',
-                'cta_color'       => 'Green',
-                'page'            => 'Product',
+                'cta'             => 'Send',
+                'cta_color'       => 'Brown',
+                'page'            => 'Landing Pages',
                 'page_position'   => 'Center',
             ];
 
-            $impact->send($jsonContent); */
+            $impact->send($jsonContent); 
 
 
-            //$response = salesForce($request, 'Lead', 'Website', 'Forms', 'Brochure', ' ', "Download Brochure New Products");
-
-            $response = true;
-
+            $response = salesForce($request, 'Lead', 'Website', 'Forms', 'Brochures', ' ', "Download Brochure New Products");
 
             if($response == true){
 
-                Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new DownloadBrochure($request));
+                //Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new DownloadBrochure($request));
 
-                return redirect()->back()->with('message', 'Your request was successful');
+                $slug = "brochure-caffe-latte.pdf";
+
+                return view('includes.thank-you.download-content',compact('slug'));
+            } else {
+
+                return redirect()->back()->with('message', 'Please try again');
+
+            }
+
+        }
+
+    }
+
+    public function bookMeeting(Request $request){
+
+        if($request->get('interested') !== null){
+            return redirect('https://www.google.com/');
+            die();
+        }
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'country' => 'required',
+            'city' => 'required',
+            'occupation' => 'required',
+            'company' => 'required',
+            'phone' => 'nullable|numeric'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        } else {
+
+        	$impact = new \ImpactData();
+            $jsonContent = [
+                'email'           => $request->get('email'),
+                'first_name'      => $request->get('name'),
+                'country'         => $request->get('country'),
+                'city'            => $request->get('city'),
+                'company'         => $request->get('company'),
+                'phone'           => $request->get('phone'),
+                'form'            => 'Book a Meeting',
+                'lead_type'       => 'Lead',
+                'url_origin'      => $request->get('origin'),
+                'url_converted'   => $_SERVER['HTTP_REFERER'],
+                'referrer'        => $request->get('referrer'),
+                'lead_path'       => $request->get('lead_path'),
+                'more_info'       => $request->get('product_name'),
+                'cta'             => 'Submit Request',
+                'cta_color'       => 'Brown',
+                'page'            => 'Landing Pages',
+                'page_position'   => 'Top',
+                'debug'           => 1,
+            	'debugEmail'      => 'teste_dcv@mailinator.com',
+            ];
+
+            $impact->send($jsonContent);
+
+
+            $response = salesForce($request, 'Lead', 'Website', 'Forms', 'Book a Meeting', ' ', $request->get('product_name'));
+
+            if($response == true){
+
+                //Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new DownloadBrochure($request));
+
+               return redirect()->back()->with('message', 'Your request was successful');
+            } else {
+
+                return redirect()->back()->with('message', 'Please try again');
+
+            }
+
+        }
+
+    }
+
+    public function downloadEbook(Request $request){
+
+        if($request->get('interested') !== null){
+            return redirect('https://www.google.com/');
+            die();
+        }
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'country' => 'required',
+            'occupation' => 'required',
+            'company' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        } else {
+
+        	$impact = new \ImpactData();
+            $jsonContent = [
+                'email'           => $request->get('email'),
+                'first_name'      => $request->get('name'),
+                'country'         => $request->get('country'),
+                'occupation'      => $request->get('occupation'),
+                'form'            => 'Download',
+                'lead_type'       => 'Lead',
+                'url_origin'      => $request->get('origin'),
+                'url_converted'   => $_SERVER['HTTP_REFERER'],
+                'referrer'        => $request->get('referrer'),
+                'lead_path'       => $request->get('lead_path'),
+                'more_info'       => 'Downloaded digital e-book '.$request->get('product_name'),
+                'interested_name' => 'Other',
+                'cta'             => 'Download Now',
+                'cta_color'       => 'Brown',
+                'page'            => 'Landing Pages',
+                'page_position'   => 'Center',
+            ];
+
+            $impact->send($jsonContent);
+
+            $response = salesForce($request, 'Lead', 'Website', 'Forms', 'Ebooks', ' ', $request->get('product_name'));
+
+            if($response == true){
+
+                //Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new DownloadBrochure($request));
+                
+                $slug = $request->get('product_name');
+
+                return view('includes.thank-you.download-ebook',compact('slug'));
+            } else {
+                return redirect()->back()->with('message', 'Please try again');
+
+            }
+
+        }
+
+    }
+
+    public function downloadPricelist(Request $request){
+
+        if($request->get('interested') !== null){
+            return redirect('https://www.google.com/');
+            die();
+        }
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'country' => 'required',
+            'city' => 'required',
+            'occupation' => 'required',
+            'company' => 'required',
+            'phone' => 'nullable|numeric'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        } else {
+
+        	$currency = checkCurrency($request->get('country'));
+
+            $impact = new \ImpactData();
+            $jsonContent = [
+                'email'           => $request->get('email'),
+                'first_name'      => $request->get('name'),
+                'country'         => $request->get('country'),
+                'company'         => $request->get('company'),
+                'phone'           => $request->get('phone'),
+                'form'            => 'PriceList',
+                'lead_type'       => 'Lead',
+                'url_origin'      => $request->get('origin'),
+                'url_converted'   => $_SERVER['HTTP_REFERER'],
+                'referrer'        => $request->get('referrer'),
+                'lead_path'       => $request->get('lead_path'),
+                'more_info'       => 'Request Pricelist '.$currency,
+                'cta'             => 'Get Price List',
+                'cta_color'       => 'Brown',
+                'page'            => 'Pricelist',
+                'page_position'   => 'Top',
+            ];
+
+            $impact->send($jsonContent);
+
+            $response = salesForce($request, 'Lead', 'Website', 'Forms', 'PriceList', ' ', 'request pricelist '.$currency);
+
+            if($response == true){
+
+                //Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new DownloadBrochure($request));
+
+                $slug = "pocket/pocket-maison-objet-jan-2020-caffe-latte.pdf";
+
+                return view('includes.thank-you.download-content',compact('slug'));
+
+            } else {
+
+                return redirect()->back()->with('message', 'Please try again');
+
+            }
+
+        }
+
+    }
+
+    public function downloadPressRelease(Request $request){
+
+        if($request->get('interested') !== null){
+            return redirect('https://www.google.com/');
+            die();
+        }
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'country' => 'required',
+            'occupation' => 'required',
+            'company' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        } else {
+
+        	$impact = new \ImpactData();
+            $jsonContent = [
+                'email'           => $request->get('email'),
+                'first_name'      => $request->get('name'),
+                'country'         => $request->get('country'),
+                'company'         => $request->get('company'),
+                'phone'           => $request->get('phone'),
+                'form'            => 'Press Release',
+                'lead_type'       => 'Lead',
+                'url_origin'      => $request->get('origin'),
+                'url_converted'   => $_SERVER['HTTP_REFERER'],
+                'referrer'        => $request->get('referrer'),
+                'lead_path'       => $request->get('lead_path'),
+                'more_info'       => $request->get('product_name'),
+                'cta'             => 'Submit Request',
+                'cta_color'       => 'Brown',
+                'page'            => 'Press',
+                'page_position'   => 'Top',
+            ];
+
+            $impact->send($jsonContent);
+
+            $response = salesForce($request, 'Lead Press', 'Website', 'Forms', 'Press Release', ' ', 'Download Press Release: '.$request->get('product_name'));
+
+            if($response == true){
+
+                //Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new DownloadBrochure($request));
+
+                $slug = $request->get('product_name');
+
+                return view('includes.thank-you.download-press-release',compact('slug'));
             } else {
 
                 return redirect()->back()->with('message', 'Please try again');
@@ -203,15 +431,30 @@ class FormsController extends Controller
                         ->withInput();
         } else {
 
+        	$impact = new \ImpactData();
+            $jsonContent = [
+                'email'           => $request->get('email'),
+                'form'            => 'Subscriber',
+                'lead_type'       => 'Lead',
+                'url_origin'      => $request->get('origin'),
+                'url_converted'   => $_SERVER['HTTP_REFERER'],
+                'referrer'        => $request->get('referrer'),
+                'lead_path'       => $request->get('lead_path'),
+                'cta'             => 'Send',
+                'cta_color'       => 'Brown',
+                'page'            => 'Homepage',
+                'page_position'   => 'Center',
+            ];
 
-            //$response = salesForce($request, 'Lead', 'Website', 'Forms', 'Subscriber', ' ', "");
+            $impact->send($jsonContent);
 
-            $response = true;
+
+            $response = salesForce($request, 'Lead', 'Website', 'Forms', 'Subscriber', ' ', "");
 
 
             if($response == true){
 
-                Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new Subscriber($request));
+                //Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new Subscriber($request));
 
                 return redirect()->back()->with('message', 'Your request was successful');
             } else {
@@ -222,6 +465,31 @@ class FormsController extends Controller
 
         }
 
+    }
+
+    public function earlyRegistration(Request $request) {
+    	$validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:early_registrations'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        } else {
+
+            $user = new EarlyRegistration;
+            $user->email = $request->email;
+
+            if(!$user->save()){
+                return redirect()->back()->with('message', 'Please try again.');
+            }  
+            else {
+                Mail::to(env('BRAND_EMAIL_GERAL'), 'Caffe Latte')->send(new Early_Registration($request));
+                return redirect()->back()->with('message', 'You are now subscribed to receive our updates.');
+            }
+            
+        }
     }
 
 }

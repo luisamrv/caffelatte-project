@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+@php session_start(); @endphp
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @yield('meta')
@@ -38,6 +39,7 @@
 
     <body>
         <script type="text/javascript" src="/js/megaTracker.js"></script>
+        <script>var tracker=getUrl();</script>
 
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DVMRPH"
@@ -52,6 +54,13 @@
     
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
         <script src="/js/parsley.min.js"></script>
+        <script src="/js/app.js"></script>
+
+        <script type="text/javascript">
+            $(".origin").val(tracker.url_origin);
+            $(".referrer").val(tracker.referrer);
+            $(".lead_path").val(tracker.flow);
+        </script>
     </body>
 
 </html>
