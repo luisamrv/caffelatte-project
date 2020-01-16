@@ -50,7 +50,7 @@
                 <div class="col-12 mb-5">
                     <div class="row">
                         @foreach($category as $product)
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-3">
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 my-3">
                             <a rel="modal:open" href="{{route('modal-product-price', ['product' => $product->slug] )}}">
                                 <img src="./img/products/thumbnails/{{ $product->slug }}.jpg" alt="" class="img-fluid">
                                 <div class="caption">{{ $product->name }}</div>

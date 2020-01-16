@@ -1,4 +1,4 @@
-<div class="container-fluid my-4">
+<div class="container-fluid my-4 padding-top-mobile">
     <div class="row">
         <div class="col-6 col-sm-4 col-lg-2">
             <a href="/products#exclusive-products">

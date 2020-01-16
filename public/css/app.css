@@ -11397,6 +11397,12 @@ p {
   visibility: hidden !important;
 }
 
+/**************************************************************/
+
+/*** Header ***/
+
+/**************************************************************/
+
 .bottom-shaded {
   box-shadow: 0px 3px 10px 0px #c4c4c4;
   -webkit-box-shadow: 0px 3px 10px 0px #c4c4c4;
@@ -11433,6 +11439,12 @@ p {
     padding-left: 0.8rem;
   }
 }
+
+/**************************************************************/
+
+/*** Forms ***/
+
+/**************************************************************/
 
 ::-webkit-input-placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -11478,6 +11490,12 @@ p {
   /* Microsoft Edge */
   color: #333;
 }
+
+/**************************************************************/
+
+/*** Carousel ***/
+
+/**************************************************************/
 
 .owl-carousel .text-container {
   margin-left: 6%;
@@ -11582,6 +11600,12 @@ p {
   letter-spacing: 1px;
 }
 
+/**************************************************************/
+
+/*** Header / Menu Mobile ***/
+
+/**************************************************************/
+
 .menu_mobile_fixed {
   position: fixed;
   background-color: white;
@@ -11654,8 +11678,14 @@ p {
   padding: 0.3rem 0.8rem;
 }
 
+/**************************************************************/
+
+/*** All Products ***/
+
+/**************************************************************/
+
 .section-bg-latte {
-  background-color: #d3c2ba;
+  background-color: #ece6dd;
   color: white;
 }
 
@@ -11677,6 +11707,12 @@ h2 {
   letter-spacing: 0.03rem;
   padding: 0.3rem 0.5rem;
 }
+
+/**************************************************************/
+
+/*** Footer ***/
+
+/**************************************************************/
 
 .footer h6 {
   letter-spacing: 0.03rem;
@@ -11772,6 +11808,12 @@ h2 {
   width: auto;
   box-shadow: none;
 }
+
+/**************************************************************/
+
+/*** Modal ***/
+
+/**************************************************************/
 
 .modal {
   width: 40%;
@@ -11936,10 +11978,11 @@ h2 {
   -moz-appearance: none;
 }
 
-/**
- * PARSLEY
- * ----------------------------------------------------------------------------
- */
+/**************************************************************/
+
+/*** Parsley ***/
+
+/**************************************************************/
 
 ul.parsley-errors-list {
   list-style-type: none;
@@ -11948,6 +11991,121 @@ ul.parsley-errors-list {
   letter-spacing: 1px;
   color: #333;
   font-weight: bold;
+}
+
+/**************************************************************/
+
+/*** Thank you Pages / Thank you Notes ***/
+
+/**************************************************************/
+
+.alert {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  z-index: 1060;
+  color: #3a2d24;
+  background-color: #d7cdc3;
+}
+
+.thank-you.position-absolute.text-container {
+  margin-left: 6%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.thank-you.position-absolute.text-container h2,
+.thank-you.position-absolute.text-container h4,
+.thank-you.position-absolute.text-container p {
+  font-weight: bold;
+  text-align: left;
+}
+
+.thank-you.position-absolute.text-container .btn-border-full {
+  font-size: 0.75rem;
+  border: 1px solid;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  padding: 0.4rem;
+}
+
+.btn-underline {
+  padding: 0px 0px 2px;
+  text-decoration: none;
+  border-radius: 0px;
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px solid #808080;
+  color: #212529;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+.thank-you .title h2 {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  letter-spacing: 0.1rem;
+  font-size: 1.3rem;
+}
+
+.thank-you .title h5 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+/**************************************************************/
+
+/*** Fairs ***/
+
+/**************************************************************/
+
+.event-description p {
+  font-size: 0.95rem;
+}
+
+.event-description h4 {
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.event-description h2 {
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.btn-border-full {
+  border: 1px solid;
+  margin-top: 0.4rem;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+}
+
+.title h2 {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  letter-spacing: 0.1rem;
+  font-size: 1.3rem;
+}
+
+.title h5 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.position-absolute.text-container h4 {
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+}
+
+.btn-small {
+  font-size: 0.65rem;
 }
 
 /*==================================================
@@ -11977,6 +12135,20 @@ ul.parsley-errors-list {
   .modal {
     width: 90%;
   }
+
+  .padding-top-mobile {
+    padding-top: 5rem;
+  }
+
+  .title h2 {
+    letter-spacing: 0rem;
+    font-size: 1rem;
+  }
+
+  .title h5 {
+    letter-spacing: 0rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -12001,6 +12173,20 @@ ul.parsley-errors-list {
 
   .modal {
     width: 90%;
+  }
+
+  .padding-top-mobile {
+    padding-top: 5rem;
+  }
+
+  .title h2 {
+    letter-spacing: 0rem;
+    font-size: 1rem;
+  }
+
+  .title h5 {
+    letter-spacing: 0rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -12027,6 +12213,22 @@ ul.parsley-errors-list {
 
   .modal {
     width: 40%;
+  }
+
+  .padding-top-mobile {
+    padding-top: 0rem;
+  }
+
+  .title h2 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    letter-spacing: 0.1rem;
+    font-size: 1.3rem;
+  }
+
+  .title h5 {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
   }
 }
 

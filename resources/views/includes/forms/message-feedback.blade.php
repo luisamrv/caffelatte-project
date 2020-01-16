@@ -6,14 +6,3 @@
         </button>
     </div>
 @endif
-
-<style>
-    .alert {
-        position: fixed;
-        top: 5%;
-        right: 5%;
-        z-index: 1060;
-        color: #3a2d24;
-        background-color: #d7cdc3;
-    }
-</style>

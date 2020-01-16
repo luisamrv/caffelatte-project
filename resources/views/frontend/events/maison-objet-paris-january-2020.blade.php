@@ -236,40 +236,6 @@
 @endsection
 
 @section('head-includes')
-    <style>
-        .event-description p {
-            font-size: .95rem;
-        }
-        .event-description h4 { text-transform: uppercase; margin: 0; font-size: 1.1rem; }
-        .event-description h2 { font-weight: normal; font-size: 1.2rem; }
-        .btn-border-full {
-            border: 1px solid;
-            margin-top: 0.4rem;
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 0.03rem;
-            padding: 0.2rem .5rem;
-            text-align: center;
-        }
-        .title h2 {
-            text-transform: uppercase;
-            margin-bottom: 0;
-            letter-spacing: 0.1rem;
-            font-size: 1.3rem;
-        }
-        .title h5 {
-            text-transform: uppercase;
-            letter-spacing: 0.1rem;
-        }
-        .position-absolute.text-container h4 {
-            font-size: 1.1rem;
-            letter-spacing: 0.1rem;
-        }
-        .btn-small { font-size: 0.65rem; }
-        .text-separator {
-
-        }
-    </style>
 @endsection
 
 @section('footer-includes')
