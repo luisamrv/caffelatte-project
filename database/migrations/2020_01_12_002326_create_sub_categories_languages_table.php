@@ -29,15 +29,15 @@ class CreateSubCategoriesLanguagesTable extends Migration
                 ['sub_category_id' => 2 , 'language_id' => 1 , 'name' => 'sofa'],
                 ['sub_category_id' => 3 , 'language_id' => 1 , 'name' => 'bench'],
                 ['sub_category_id' => 4 , 'language_id' => 1 , 'name' => 'stool'],
-                ['sub_category_id' => 5 , 'language_id' => 1 , 'name' => 'dining-chair'],
-                ['sub_category_id' => 6 , 'language_id' => 1 , 'name' => 'bar-chair'],
-                ['sub_category_id' => 7 , 'language_id' => 1 , 'name' => 'counter-stool'],
+                ['sub_category_id' => 5 , 'language_id' => 1 , 'name' => 'dining chair'],
+                ['sub_category_id' => 6 , 'language_id' => 1 , 'name' => 'bar chair'],
+                ['sub_category_id' => 7 , 'language_id' => 1 , 'name' => 'counter stool'],
 
                 ['sub_category_id' => 8 , 'language_id' => 1 , 'name' => 'console'],
                 ['sub_category_id' => 9 , 'language_id' => 1 , 'name' => 'sideboard'],
-                ['sub_category_id' => 10 , 'language_id' => 1 , 'name' => 'side-table'],
-                ['sub_category_id' => 11 , 'language_id' => 1 , 'name' => 'center-table'],
-                ['sub_category_id' => 12 , 'language_id' => 1 , 'name' => 'dining-table'],
+                ['sub_category_id' => 10 , 'language_id' => 1 , 'name' => 'side table'],
+                ['sub_category_id' => 11 , 'language_id' => 1 , 'name' => 'center table'],
+                ['sub_category_id' => 12 , 'language_id' => 1 , 'name' => 'dining table'],
 
                 ['sub_category_id' => 13 , 'language_id' => 1 , 'name' => 'mirror'],
 

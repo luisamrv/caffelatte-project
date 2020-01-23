@@ -10,13 +10,9 @@
 //     return view('welcome');
 // });
 
-
-
 Route::get('/', 'FrontendController@getHomepage')->name('homepage');
 
 Route::get('/products', 'FrontendController@getAllProducts')->name('products');
-
-Route::get('/events/brochura', 'FrontendController@getBrochura')->name('brochura');
 
 Route::get('/events/{event}', 'FrontendController@getEventLanding')->name('event-landing');
 
@@ -33,6 +29,7 @@ Route::get('/includes/modal-download-brochure/', 'FrontendController@getModalBro
 
 Route::get('/includes/modal-download-hr-images/{slug}', 'FrontendController@getModalHRImages')->name('modal-download-hr-images');
 
+
 Route::get('/includes/modal-download-ebook/', 'FrontendController@getModalEbook')->name('modal-download-ebook');
 
 Route::get('/includes/modal-download-pricelist/', 'FrontendController@getModalPricelist')->name('modal-download-pricelist');
@@ -42,14 +39,6 @@ Route::get('/includes/modal-book-a-meeting/', 'FrontendController@getModalBookMe
 Route::get('/includes/modal-ebook/{ebook}', 'FrontendController@getModalEbook')->name('modal-ebook');
 
 Route::get('/includes/modal-download-press-release/{slug}', 'FrontendController@getModalPressRelease')->name('modal-download-press-release');
-
-/*
-|--------------------------------------------------------------------------
-| Products
-|--------------------------------------------------------------------------
-*/ 
-
-Route::get('/product/marco', 'FrontendController@getProductMarco');
 
 /*
 |--------------------------------------------------------------------------

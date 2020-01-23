@@ -15,6 +15,11 @@ class FrontendController extends Controller
         return view('frontend.homepage');
     }
 
+    public function getBrochura() {
+        $products = ProductRepository::getBrandProducts()->take(4);
+        return view('frontend.events.brochura', compact('products'));
+    }
+
     public function getAllProducts() {
 
         $all_products = array();
@@ -32,6 +37,11 @@ class FrontendController extends Controller
         endforeach;
 
         return view('frontend.all-products', compact('categories', 'brand_products', 'all_products'));
+    }
+
+    public function getProductMarco() {
+        $products = ProductRepository::getBrandProducts()->take(4);
+        return view('frontend.marco',  compact('products'));
     }
 
     public function getEventLanding($event)
@@ -54,6 +64,15 @@ class FrontendController extends Controller
     public function getModalBrochure(){
         return view('includes.forms.modal-download-brochure');
     }
+
+    public function getModalHRImages($slug){
+        return view('includes.forms.modal-download-hr-images', compact('slug'));
+    }
+
+    public function getModalEbookPop(){
+        return view('includes.forms.modal-download-ebookpop');
+    }
+
 
     public function getModalPricelist(){
         return view('includes.forms.modal-download-pricelist');

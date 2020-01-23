@@ -17,7 +17,10 @@
                                 <a target="_blank" href="https://api.whatsapp.com/send?phone=351911780428&amp;text=Hello, I'm interested in CAFFE LATTE products. Can you help me?"><i class="fab fa-whatsapp"></i></a>
                                 <a target="_blank" href="mailto:info@caffelattehome.com"><i class="far fa-envelope"></i></a>
                                 <a target="_blank" href="tel:+351911780428"><i class="fas fa-phone"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/caffelattehome/"><i class="fab fa-facebook"></i></a>
                                 <a target="_blank" href="https://www.instagram.com/caffelattehome/"><i class="fab fa-instagram"></i></a>
+                                <a target="_blank" href="https://www.pinterest.pt/caffelattehome/"><i class="fab fa-pinterest"></i></a>
+                                <a target="_blank" href="https://www.linkedin.com/company/caffelattehome"><i class="fab fa-linkedin"></i></a>
 
                             </div>
                         </div>
@@ -68,7 +71,7 @@
                             </li>
     
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header">NEWS & EVENTS</a>
+                                <a class="nav-link menu-header" href="https://www.caffelattehome.com/events/maison-objet-paris-january-2020">NEWS & EVENTS</a>
                             </li>
     
                             <li class="nav-item position-static">
@@ -147,7 +150,7 @@
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header">NEWS & EVENTS</a>
+                        <a class="nav-link menu-header" href="https://www.caffelattehome.com/events/maison-objet-paris-january-2020">NEWS & EVENTS</a>
                     </div>
 
                     <div class="col-12 new_menu_open">

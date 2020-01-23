@@ -12,7 +12,20 @@
                         <div class="title">
                             <h2>LAUNCHING JANUARY 17 <br> M&O PARIS HALL 8 STAND C13</h2>
                         </div>
-                  </div>
+                    </div>
+                </div>
+                <div class="item">
+                        <a rel="modal:open" href="{{route('modal-ebook', ['ebook' => 'ebook-new-products'] )}}">
+                        <img src="/img/homepage/slide/ebook-banner.jpg" width="1920" height="800" class="cd-dot img-fluid d-none d-md-block">
+                        <img src="/img/homepage/slide/ebook-banner-mobile.jpg" width="768" height="600" class="cd-dot img-fluid d-block d-md-none">
+                        <div class="position-absolute text-container text-light">
+                            <div class="title" style="color:#3a2d24 !important;">
+                                <h2>THE PERFECT BLEND BETWEEN DESIGN,</h2>
+                                <h4>TEXTURES, FABRICS AND MATERIALS</h4>
+                            </div>
+                            <div class="btn-border-full" style="color:#3a2d24 !important;">Download Now</div>
+                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -94,12 +107,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-12">
-                            <a rel="modal:open" href="{{route('modal-download-pricelist')}}" class="w-75 btn-border-full btn-get-price">DOWNLOAD PRICELIST</a>
-                        </div>
 
                         <div class="col-12">
-                            <a rel="modal:open" href="{{route('modal-download-brochure')}}" class="w-75 btn-border-full btn-get-price">DOWNLOAD BROCHURE</a>
+                            <a rel="modal:open" href="{{route('modal-download-hr-images', ['slug' => 'maison-objet-paris-january-2020'])}}" class="w-75 btn-background-full btn-get-price">DOWNLOAD HR IMAGES</a>
                         </div>
 
                         <div class="col-12">
@@ -110,6 +120,75 @@
                             <a href="{{route('products')}}" class="btn-border-full btn-get-price px-4">DISCOVER ALL OUR PRODUCTS</a>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                            
+                    <div class="col-12 p-0 carrouselImages owl-slide owl-theme owl-carousel position-relative pt-5" >
+
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-1.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-2.jpg"   class="cd-dot img-fluid">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-3.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                         <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-4.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-5.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-6.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-7.jpg"   class="cd-dot img-fluid">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-8.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                         <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-9.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-10.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-11.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-12.jpg"   class="cd-dot img-fluid">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-13.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                         <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-14.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-15.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                        <div class="item">
+                            <img src="/img/landing/events/maison-et-objet-paris-jan-2020/carrousel/maison-objet-paris-january-2020-16.jpg"  class="cd-dot img-fluid ">
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-12">
+
+
+                    <div class="col-12 text-center" >
+                            <a rel="modal:open" href="{{route('modal-download-hr-images', ['slug' => 'maison-objet-paris-january-2020'])}}" class="btn-background-full btn-get-price" >DOWNLOAD HR IMAGES</a>
+                        </div>
+
+
+                    </div>
+                    
                 </div>
             </div>
 
@@ -236,11 +315,45 @@
 @endsection
 
 @section('head-includes')
+    <style>
+        .event-description p {
+            font-size: .95rem;
+        }
+        .event-description h4 { text-transform: uppercase; margin: 0; font-size: 1.1rem; }
+        .event-description h2 { font-weight: normal; font-size: 1.2rem; }
+        .btn-border-full {
+            border: 1px solid;
+            margin-top: 0.4rem;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.03rem;
+            padding: 0.2rem .5rem;
+            text-align: center;
+        }
+        .title h2 {
+            text-transform: uppercase;
+            margin-bottom: 0;
+            letter-spacing: 0.1rem;
+            font-size: 1.3rem;
+        }
+        .title h5 {
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+        }
+        .position-absolute.text-container h4 {
+            font-size: 1.1rem;
+            letter-spacing: 0.1rem;
+        }
+        .btn-small { font-size: 0.65rem; }
+        .text-separator {
+
+        }
+    </style>
 @endsection
 
 @section('footer-includes')
 <script>
-    $('.owl-carousel').owlCarousel({
+    $('.owl-main').owlCarousel({
         loop: true,
         margin: 10,
         lazyLoad: false,
@@ -253,6 +366,34 @@
             0: {items: 1},
             600: {items: 1},
             768: {items: 1}
+        }
+    });
+
+    $('.teste-collapse').click(function(){
+        var toggleWidth = $(".menu_mobile").width() == 0 ? "90vw" : '0px';
+        $(".main_menu_mobile").css('width', toggleWidth);
+    });
+
+    $('.close-menu').click(function(){
+        var toggleWidth = $(".menu_mobile").width() == 0 ? "90vw" : '0px';
+        $(".main_menu_mobile").css('width', toggleWidth);
+    });
+</script>
+
+<script>
+    $('.carrouselImages').owlCarousel({
+        loop: true,
+        margin: 10,
+        lazyLoad: false,
+        dots: true,
+        nav: false,
+        autoplay: true,
+        fluidSpeed: 900,
+        autoplaySpeed: 900,
+        responsive: {
+            0: {items: 1},
+            600: {items: 2},
+            768: {items: 3}
         }
     });
 

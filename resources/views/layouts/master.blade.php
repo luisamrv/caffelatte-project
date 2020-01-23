@@ -33,6 +33,8 @@
         })(window,document,'script','dataLayer','GTM-5DVMRPH');</script>
         <!-- End Google Tag Manager -->
 
+        <meta name="p:domain_verify" content="ac9591e6110fb8404314279743729c08"/>
+
         @section('head-includes')
             @show
     </head>
