@@ -26,6 +26,8 @@ Route::get('/landing-home', function () {
     return view('welcome');
 });
 
+Route::get('terms-and-conditions', 'FrontendController@getTermsConditions')->name('terms-and-conditions');
+
 
 Route::get('/includes/modal-product-price/{product}', 'FrontendController@getModalProductPrice')->name('modal-product-price');
 

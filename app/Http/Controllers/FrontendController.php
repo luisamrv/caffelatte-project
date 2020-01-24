@@ -53,9 +53,16 @@ class FrontendController extends Controller
     }
 
     public function getProduct($slug) {
-        return "single product";
+        $random_products = ProductRepository::getBrandProducts()->take(4);
+        $product = ProductRepository::getProduct($slug);
+        return view('frontend.product',compact('product', 'random_products'));
     }
 
+    public function getTermsConditions() {
+        return 'terms and conditions';
+    }
+
+    
     public function getModalProductPrice($product){
         $product = ProductRepository::getProduct($product);
         return view('includes.forms.modal-product-price',compact('product'));

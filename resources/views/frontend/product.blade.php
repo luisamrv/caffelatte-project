@@ -1,156 +1,147 @@
 @extends('layouts.master')
 
 @section('main-content')
-<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-
-<script src="https://unpkg.com/swiper/js/swiper.js"></script>
-<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-
-
 <div class="container">
 
     <div class="row">
         <div class="col-12 col-lg-7 mt-5 mb-5 text-center ">
+            
+        @php
+          $directory = "./img/products/product-page/".$product->slug."/slide/";
+          $filecount = count(glob($directory . '*.{jpg,gif}', GLOB_BRACE));
+        @endphp
+
             <div class="swiper-container swiper-product swiper_style">
-                <!-- Additional required wrapper -->
                 <div class="swiper-wrapper padding-0">
-                    <!-- Slides -->
-                    <div class="swiper-slide "><img src="https://via.placeholder.com/700x400" class="img-fluid img-height center-block"></div>
-                    <div class="swiper-slide "><img src="https://via.placeholder.com/700x400" class="img-fluid img-height center-block"></div>
-                    <div class="swiper-slide "><img src="https://via.placeholder.com/700x400" class="img-fluid img-height center-block"></div>
-
+                  @for($i = 1; $i <= $filecount; $i++)
+                    <div class="swiper-slide">
+                      <img src="/img/products/product-page/{{$product->slug}}/slide/{{$product->slug}}-{{$i}}.jpg" class="img-fluid img-height center-block">
+                    </div>
+                  @endfor
                 </div>
-                <!-- If we need pagination -->
+
                 <div class="swiper-pagination swiper-product-pagination"></div>
-
-
-
             </div>
-
-            <div class="col-xs-12 d-none d-lg-block d-lg-block mt-1 p-0">
+            
+            <div class="col-12 d-none d-lg-block d-lg-block mt-1 p-0">
                 <div class="swiper-container gallery-thumbs">
                     <div class="swiper-wrapper" style="margin-left:-8%">
+                      @for($i = 1; $i <= $filecount; $i++)
                         <div class="swiper-slide col-md-3 p-0">
-                          <img src="https://via.placeholder.com/180x160" class="img-responsive center-block img-fluid">
+                          <img src="/img/products/product-page/{{$product->slug}}/slide/thumbs/{{$product->slug}}-{{$i}}.jpg" class="img-fluid center-block img-fluid">
                         </div>
-
-                        <div class="swiper-slide col-md-3 p-0">
-                          <img src="https://via.placeholder.com/180x160" class="img-responsive center-block img-fluid">
-                        </div>
-
-                        <div class="swiper-slide col-md-3 p-0">
-                          <img src="https://via.placeholder.com/180x160" class="img-responsive center-block img-fluid">
-                        </div>
+                      @endfor
                     </div>
                 </div>
           </div>
         </div>
         <div class="col-12 col-lg-5 leftside">
             <div class="titulo text-center">
-                <h3><b>Marco</b></h3>
+                <h3><b>{{$product->name}}</b></h3>
             </div>
             <div class="sub-titulo text-center">
-                <h4>Sofa</h4>
+                <h4>{{ $product->sub_category->sub_category_languages->where('language_id', '=', '1')->first()->name }}</h4>
             </div>
-            <div class="col-12" style="padding:0;text-align: justify;">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="col-12 p-0 text-justify">
+                 {!! $product->product_languages[0]->description !!}
             </div>
-            <div style="padding:0;">
-              <a rel="modal:open" href="https://www.caffelattehome.com/includes/modal-product-price/kafe-sideboard" class="btn-background-full col-12 col-lg-6">REQUEST PRICE</a>
+            <div class="p-0">
+                <a rel="modal:open" href="{{route('modal-product-price', ['product' => $product->slug] )}}" class="btn-background-full col-12 col-lg-6">REQUEST PRICE</a>
             </div>
+            
+            @if($product->is_partner == 1)
+            <div class="col-12 p-0 mt-4"> 
+                in partnership with
+                <img src="/img/icons/partners/logo-{{ $product->product_brands[0]->brand->slug }}.png" alt="" style="filter: invert(1);height:50px;">
+            </div>
+            @endif
         </div>
     </div>
 
     <div class="row">
-          <div class="container mt-5">
+      <div class="container mt-5">
 
-              <ul class="nav nav-tabs nav-tabs-all-products">
-                <li class="active"><a data-toggle="tab" href="#product-details" class="active"><h5 class="m-0 boldtext">PRODUCT DETAILS</h5></a></li>
-                <li class="ml-5"><a data-toggle="tab" href="#shipping"><h5 class="m-0 boldtext">SHIPPING & RETURNS</h5></a></li>
-                <li class="ml-5"><a data-toggle="tab" href="#product-files"><h5 class="m-0 boldtext">PRODUCT FILES</h5></a></li>
-              </ul>
+        <ul class="nav nav-tabs nav-tabs-all-products">
+          <li class="active"><a data-toggle="tab" href="#product-details" class="active"><h5 class="m-0 boldtext">PRODUCT DETAILS</h5></a></li>
+          <li class="ml-5"><a data-toggle="tab" href="#shipping"><h5 class="m-0 boldtext">SHIPPING & RETURNS</h5></a></li>
+          <!-- <li class="ml-5"><a data-toggle="tab" href="#product-files"><h5 class="m-0 boldtext">PRODUCT FILES</h5></a></li> -->
+        </ul>
 
-            <div class="tab-content">
-                <div id="product-details" class="tab-pane fade in active show">
-                  <div class="col-12 pl-0 mt-3 float-left">
-                    <div class="col-6 col-lg-3 p-0 float-left">
-                      <h5 class="mb-0"><b>WIDTH</b></h5>
-                      <p class="normal-transform">360 millimeters (14.17in)</p>
-                    </div>
-                    <div class="col-6 col-lg-3 p-0 float-left">
-                      <h5 class="mb-0"><b>HEIGHT</b></h5>
-                      <p class="normal-transform">480 millimeters (18.901in)</p>
-                    </div>
-                    <div class="col-6 col-lg-3 p-0 float-left">
-                      <h5 class="mb-0"><b>DEPTH</b></h5>
-                      <p class="normal-transform">360 millimeters (14.17in)</p>
-                    </div>
-                    <div class="col-6 col-lg-3 p-0 float-left">
-                      <h5 class="mb-0"><b>Weight</b></h5>
-                      <p class="normal-transform">7,5 kilograms</p>
-                    </div>
-                    <div class="col-6 col-lg-3 p-0 float-left">
-                      <h5 class="mb-0"><b>CUBICAGE</b></h5>
-                      <p class="normal-transform">0,110 m3</p>
-                    </div>
-                    <div class="col-6 col-lg-3 p-0 float-left">
-                      <h5 class="mb-0"><b>Metric</b></h5>
-                      <p class="normal-transform">2 meters (78.74in)</p>
-                    </div>
-                    <div class="col-6 col-lg-3 p-0 float-left">
-                      <h5 class="mb-0"><b>MATERIALS AND FINISHES</b></h5>
-                      <p class="normal-transform">Fabric:<br />Salvador 02<br />Sofia 59</p>
-                    </div>
+        <div class="tab-content">
+            <div id="product-details" class="tab-pane fade in active show">
+              <div class="col-12 pl-0 mt-3 float-left">
+                
+                <div class="row">
+                  
+                  @foreach($product->product_languages[0]->getAttributes() as $key => $value)
+                    
+                    @if(!($key == 'id') && !($key == 'product_id') && !($key == 'description') && !($key == 'language_id') && !($key == 'materials_finishes') && ($value != NULL)) 
+                      <div class="col-6 col-lg-3 mb-4">
+                        {!! $value !!}
+                      </div>
+                    @endif
+
+                  @endforeach
+
+                  <div class="col-6 col-lg-3 mb-3">
+                    {!!$product->product_languages[0]->materials_finishes !!}
                   </div>
                 </div>
 
-                <div id="shipping" class="tab-pane fade mt-3">
-                    <!-- <h5><b>Shipping and returns</b></h5> -->
-                    <p class="text-justify ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <a target="_blank" href="https://www.caffelattehome.com/"><b>Terms&Conditions</b></a>.
-                    </p>
-                </div>
-
-                <div id="product-files" class="tab-pane fade mt-3">
-                        <a href="https://www.caffelattehome.com/" target="_blank"><i class="fas fa-file fa-2x "></i> DOWNLOAD EN</a><br><br>
-                        <a href="https://www.caffelattehome.com/" target="_blank"><i class="fas fa-file fa-2x"></i> DOWNLOAD PT</a>
-                </div>
               </div>
+            </div>
+
+            <div id="shipping" class="tab-pane fade mt-3">
+                <p class="text-justify">
+                Shipping Incoterm could be Ex Works (EXW), DAP or DDP – Origin Porto, Portugal; <br>
+                All the transports made by COVET Lda are insured. If transportation is arranged by COVET HOUSE, fees will be charged separately from the product(s) value. Standard shipping quotation includes door-to-door, drop off service only. If a different service or urgent delivery is required, the customer must clearly request it when placing the order and will be charged accordingly. All products are carefully packed and inspected prior to shipment. <br>
+                We are not responsible for damages caused by handling, loading or unloading by people acting on behalf of the customer. COVET HOUSE is not responsible for loss or damage in transit. Should visible or concealed damage occur in transit, immediately notify the delivering carrier with initial notification of intent to file a claim. <br>
+                Any damage should be communicated to the sales rep during the first 48 hours after receiving the order; photographic and video evidence of the damages should be sent via email. Failure to report concealed damage within 48 hours of reception may result in the denial of the claim. <br>
+                </p>
+            </div>
+
+            <!-- <div id="product-files" class="tab-pane fade mt-3">
+                    <a href="https://www.caffelattehome.com/" target="_blank"><i class="fas fa-file fa-2x "></i> DOWNLOAD EN</a><br><br>
+                    <a href="https://www.caffelattehome.com/" target="_blank"><i class="fas fa-file fa-2x"></i> DOWNLOAD PT</a>
+            </div> -->
           </div>
+      </div>
     </div>
+    
+    @php
+      $directory = "./img/products/product-page/".$product->slug."/ambiences/";
+      $filecount = count(glob($directory . '*.{jpg,gif}', GLOB_BRACE));
+    @endphp
+    
+    @if($filecount > 0)
+    <div class="row">
+      <div class="col-12 mt-5" >
+        <img src="/img/products/product-page/{{$product->slug}}/ambiences/{{$product->slug}}-1.jpg" class="img-fluid">
+        <!-- <img src="https://via.placeholder.com/600x550" class="img-fluid d-block d-md-none "> -->
+      </div>
+    </div>
+    @endif
 
     <div class="row">
-      <div class="col-12  mt-5" >
-        <img src="https://via.placeholder.com/1110x550" class="img-fluid d-none d-md-block">
-        <img src="https://via.placeholder.com/600x550" class="img-fluid d-block d-md-none ">
+      <div class="col-12 text-center mt-5 mb-5">
+        <h2>COMPLETE THE ROOM</h2>
       </div>
     </div>
 
     <div class="row">
-        <div class="col-12 text-center mt-5 mb-5">
-            <h2>COMPLETE THE ROOM</h2>
+      @foreach($random_products as $random_product)
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3 my-3">
+          <a rel="modal:open" href="{{route('modal-product-price', ['product' => $random_product->slug] )}}">
+              <img src="/img/products/exclusive-products/{{ $random_product->slug }}.png" alt="" class="img-fluid">
+              <div class="caption">{{ $random_product->name }}</div>
+              <div class="caption-sub"> {{ ucwords($random_product->sub_category->sub_category_languages[0]->name) }}</div>
+          </a>
+          <div class="text-center">
+              <a rel="modal:open" href="{{route('modal-product-price', ['product' => $random_product->slug] )}}" class="btn-border-full btn-get-price">GET PRICE</a>
+          </div>
         </div>
+      @endforeach
     </div>
-
-    <div class="row">
-                @foreach($products as $product)
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3 my-3">
-                        <a rel="modal:open" href="{{route('modal-product-price', ['product' => $product->slug] )}}">
-                            <img src="/img/products/exclusive-products/{{ $product->slug }}.png" alt="" class="img-fluid">
-                            <div class="caption">{{ $product->name }}</div>
-                            <div class="caption-sub"> {{ ucwords($product->sub_category->sub_category_languages[0]->name) }}</div>
-                        </a>
-                        <div class="text-center">
-                            <a rel="modal:open" href="{{route('modal-product-price', ['product' => $product->slug] )}}" class="btn-border-full btn-get-price">GET PRICE</a>
-                        </div>
-                </div>
-                @endforeach
-        </div>
 
 </div>
 
@@ -172,6 +163,11 @@
 @endsection
 
 @section('head-includes')
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css"> -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+<!-- <script src="https://unpkg.com/swiper/js/swiper.js"></script> -->
+
     <style>
         @media only screen and (min-width: 992px){
             .leftside {
@@ -243,6 +239,7 @@
 @endsection
 
 @section('footer-includes')
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 <script>
     $('.owl-carousel').owlCarousel({
         loop: true,
@@ -258,8 +255,6 @@
             600: {items: 1},
             768: {items: 1}
         }
-    });
-
     });
 </script>
 

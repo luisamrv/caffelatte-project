@@ -56,8 +56,7 @@ class ProductRepository
 	
 	public static function getProduct($product)
 	{
-		return Product::where('is_active', '=', '1')
-		->where('slug', 'like', $product)
+		return Product::where('slug', 'like', $product)
 		->with([
 			'product_languages' => function($query){ 
 				$query->where('language_id', '=', 1)->get(); 
@@ -67,7 +66,15 @@ class ProductRepository
 					'sub_category_languages' => function($query){
 						$query->where('language_id', '=', 1); 
 				}]);
+			},
+			'product_brands' => function($query){ 
+				$query->with([
+					'brand' => function($query){
+						$query->where('is_active', '=', '1')->where('is_deleted', '=', '0')->get(); 
+				}]);
 			}])
+		->where('is_active', '=', '1')
+		->where('is_deleted', '=', '0')
 		->first(); 
 	}
 }
