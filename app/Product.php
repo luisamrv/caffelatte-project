@@ -41,6 +41,11 @@ class Product extends Model
         return $this->hasMany(Product_currency::class);
     }
 
+    public function product_brands()
+    {
+        return $this->hasMany(Product_brand::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';
