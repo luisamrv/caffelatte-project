@@ -533,7 +533,7 @@ class CreateProductLanguagesTable extends Migration
                                                           'tec_info_others' => ''],
 
                 ['product_id' => 36,  'language_id' => 1,  'description' => '<p>Mount Kilimanjaro, a dormant volcano in Tanzania and the highest mountain in Africa, was the inspiration behind the Kilimanjaro mirror. Known for its ideal climatic conditions but scarce harvest infrastructure, Tanzania is where the finest exclusive coffee beans come from. Just like that, the Kilimanjaro mirror brings a distinct and refined atmosphere to your home decor where less will always be more. </p>', 
-                                                          'materials_finishes' => 'MATERIALS & FINISHES<br>A square mirror supported by a solid mahogany wood frame, 
+                                                          'materials_finishes' => 'MATERIALS & FINISHES<br>A square mirror supported by a solid mahogany wood frame', 
                                                           'tec_info_width' => 'WIDTH<br>110 cm | 43.71"',
                                                           'tec_info_height' => 'HEIGHT<br>110 cm | 43.71"',
                                                           'tec_info_length' => '',
