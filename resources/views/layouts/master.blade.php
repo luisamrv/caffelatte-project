@@ -13,7 +13,6 @@
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css" />
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
         <link href="/css/app.css" rel="stylesheet">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -54,10 +53,6 @@
             @yield('main-content')
 
         @include('includes.footer')
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-        <script src="/js/parsley.min.js"></script>
-        <script src="/js/app.js"></script>
 
         <script type="text/javascript">
             $(".origin").val(tracker.url_origin);

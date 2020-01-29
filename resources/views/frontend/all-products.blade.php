@@ -20,13 +20,13 @@
                     <div class="col-12 p-0 owl-carousel owl-slide owl-theme nopadding position-relative pb-5">
                         @foreach($brand_products as $brand_product)
                             <div class="item my-3">
-                            <a rel="modal:open" href="{{route('modal-product-price', ['product' => $brand_product->slug] )}}">
+                                <a href="{{route('product', ['product' => $brand_product->slug] )}}">
                                     <img src="./img/products/exclusive-products/{{ $brand_product->slug }}.png" alt="" class="img-fluid">
                                     <div class="caption">{{ $brand_product->name }}</div>
                                     <div class="caption-sub"> {{ ucwords($brand_product->sub_category->sub_category_languages[0]->name) }}</div>
                                 </a>
                                 <div class="text-center">
-                                    <a rel="modal:open" href="{{route('modal-product-price', ['product' => $brand_product->slug] )}}" class="btn-border-full btn-get-price">GET PRICE</a>
+                                    <a href="{{route('product', ['product' => $brand_product->slug] )}}" class="btn-border-full btn-get-price">GET PRICE</a>
                                 </div>
                             </div>  
                         @endforeach
@@ -51,13 +51,13 @@
                     <div class="row">
                         @foreach($category as $product)
                         <div class="col-6 col-sm-6 col-md-4 col-lg-3 my-3">
-                            <a rel="modal:open" href="{{route('modal-product-price', ['product' => $product->slug] )}}">
+                            <a href="{{route('product', ['product' => $product->slug] )}}">
                                 <img src="./img/products/thumbnails/{{ $product->slug }}.jpg" alt="" class="img-fluid">
                                 <div class="caption">{{ $product->name }}</div>
                                 <div class="caption-sub"> {{ ucwords($product->sub_category->sub_category_languages[0]->name) }}</div>
                             </a>
                             <div class="text-center">
-                                <a rel="modal:open" href="{{route('modal-product-price', ['product' => $product->slug] )}}" class="btn-border-full btn-get-price">GET PRICE</a>
+                                <a href="{{route('product', ['product' => $product->slug] )}}" class="btn-border-full btn-get-price">GET PRICE</a>
                             </div>
                             
 

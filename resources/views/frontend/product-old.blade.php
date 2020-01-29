@@ -4,39 +4,45 @@
 <div class="container">
 
     <div class="row">
-
-        <div class="col-12 col-lg-7 mt-5 mb-5 text-center product-slide">  
-          @php
-            $directory = "./img/products/product-page/".$product->slug."/slide/";
-            $filecount = count(glob($directory . '*.{jpg,gif}', GLOB_BRACE));
-          @endphp
+        <div class="col-12 col-lg-7 mt-5 mb-5 text-center ">
             
-          <div class="row">
-            <div class="col-2 d-none d-lg-inline-block text-center">
-              <div class="product-slide--nav">
-                @for($i = 1; $i <= $filecount; $i++)
-                  <div><img src="/img/products/product-page/{{$product->slug}}/slide/thumbs/{{$product->slug}}-{{$i}}.jpg" class="img-fluid" width="220" height="220" alt=""></div>
-                @endfor
-              </div>
-            </div>
+        @php
+          $directory = "./img/products/product-page/".$product->slug."/slide/";
+          $filecount = count(glob($directory . '*.{jpg,gif}', GLOB_BRACE));
+        @endphp
 
-            <div class="col-12 col-lg-10 product-slide--details padding-top-mobile">
-              @for($i = 1; $i <= $filecount; $i++)
-                <div><img src="/img/products/product-page/{{$product->slug}}/slide/{{$product->slug}}-{{$i}}.jpg" class="img-fluid" width="700" height="400" alt=""></div>
-              @endfor
+            <div class="swiper-container swiper-product swiper_style">
+                <div class="swiper-wrapper padding-0">
+                  @for($i = 1; $i <= $filecount; $i++)
+                    <div class="swiper-slide">
+                      <img src="/img/products/product-page/{{$product->slug}}/slide/{{$product->slug}}-{{$i}}.jpg" class="img-fluid img-height center-block">
+                    </div>
+                  @endfor
+                </div>
+
+                <div class="swiper-pagination swiper-product-pagination"></div>
             </div>
+            
+            <div class="col-12 d-none d-lg-block d-lg-block mt-1 p-0">
+                <div class="swiper-container gallery-thumbs">
+                    <div class="swiper-wrapper" style="margin-left:-14%">
+                      @for($i = 1; $i <= $filecount; $i++)
+                        <div class="swiper-slide col-md-3 p-0">
+                          <img src="/img/products/product-page/{{$product->slug}}/slide/thumbs/{{$product->slug}}-{{$i}}.jpg" class="img-fluid center-block">
+                        </div>
+                      @endfor
+                    </div>
+                </div>
           </div>
         </div>
-
-
-        <div class="col-12 col-lg-5 mt-2 mt-lg-5">
+        <div class="col-12 col-lg-5 leftside">
             <div class="product_title">
                 <h3><b>{{$product->name}}</b></h3>
             </div>
             <div class="product_sub_title">
                 <h4 class="text-uppercase">{{ $product->sub_category->sub_category_languages->where('language_id', '=', '1')->first()->name }}</h4>
             </div>
-            <div class="product_description col-12 p-0 text-justify my-4 pr-0 pr-lg-3 fixed-panel">
+            <div class="product_description col-12 p-0 text-justify my-4">
                  {!! $product->product_languages[0]->description !!}
             </div>
             <div class="p-0">
@@ -44,7 +50,7 @@
             </div>
             
             @if($product->is_partner == 1)
-            <div class="col-12 p-0 mt-4 product_partners"> 
+            <div class="col-12 p-0 mt-5 product_partners"> 
                 <span class="text-uppercase">in partnership with</span> <br>
                 <a href="{{ $product->product_brands[0]->brand->website_url }}" target="_blank">
                   <img src="/img/icons/partners/logo-{{ $product->product_brands[0]->brand->slug }}-d.png" alt="">
@@ -114,6 +120,7 @@
     <div class="row">
       <div class="col-12 mt-5" >
         <img src="/img/products/product-page/{{$product->slug}}/ambiences/{{$product->slug}}-1.jpg" class="img-fluid">
+        <!-- <img src="https://via.placeholder.com/600x550" class="img-fluid d-block d-md-none "> -->
       </div>
     </div>
     @endif
@@ -159,43 +166,107 @@
 @endsection
 
 @section('head-includes')
-    <link rel="stylesheet" type="text/css" href="https://www.circu.net/css/slick.css"/>
+    <style>
+        @media only screen and (min-width: 992px){
+            .leftside {
+                margin-top:100px;
+            }
+          }
+
+        @media only screen and (min-width: 992px){
+            .titulo {
+              text-align:left !important;
+            }
+            .sub-titulo {
+                text-align:left !important;
+            }
+        }
+
+        @media only screen and (min-width: 768px){
+            
+        }
+
+        @media only screen and (min-width: 517px) and (max-width: 767px){ 
+            .nav-tabs-all-products li a.active h5{
+              font-weight: bold !important;
+            }
+
+          
+        }
+
+        @media only screen and (min-width: 412px) and (max-width: 517px){ 
+            .nav-tabs-all-products li a.active h5{
+              font-weight: bold !important;
+            }
+
+            
+        }
+
+        @media only screen and (max-width: 412px) { 
+            .nav-tabs-all-products li a.active h5{
+              font-weight: bold !important;
+            }
+
+          
+        }
+    </style>
+
+
+
 @endsection
 
 @section('footer-includes')
-<script type="text/javascript">
-$(document).ready(function() {
-  $('.product-slide--details').slick({
-      slidesToShow: 1,
-      useTransform: false,
-      asNavFor: '.product-slide--nav',
-      nextArrow: '<span class="lnr lnr-chevron-right" style="font-size:20px;position: absolute;top: 50%;right: 20px;z-index: 99;cursor:pointer;"></span>',
-      prevArrow: '<span class="lnr lnr-chevron-left" style="font-size:20px;position: absolute;top: 50%;left: 20px;z-index: 99;cursor:pointer;"></span>',
-      autoplaySpeed:4000,
-      speed:600,
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        lazyLoad: false,
+        dots: true,
+        nav: false,
+        autoplay: true,
+        fluidSpeed: 900,
+        autoplaySpeed: 900,
+        responsive: {
+            0: {items: 1},
+            600: {items: 1},
+            768: {items: 1}
+        }
+    });
+</script>
+
+<script>
+$(window).load(function(){
+  var swiper = new Swiper('.swiper-product', {
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next-thumb',
+      prevEl: '.swiper-button-prev-thumb',
+    },
+    loop:true,
+    loopedSlides:4
   });
 
-  $('.product-slide--nav').slick({
-    slidesToShow: 4,
-    useTransform: false,
-    asNavFor: '.product-slide--details',
-    focusOnSelect: true,
-    vertical: true,
-    verticalSwiping: true,
-    arrows: true,
-    nextArrow: '<span class="lnr lnr-chevron-down" style="font-size:20px;z-index: 99;cursor:pointer;"><i class="fas fa-angle-down"></i></span>',
-    prevArrow: '<span class="lnr lnr-chevron-up" style="font-size:20px;z-index: 99;cursor:pointer;"><i class="fas fa-angle-up"></i></span>',
+  galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 10,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    touchRatio: 0.2,
+    slideToClickedSlide: true,
+    loop:true,
+    loopedSlides:3,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
   });
 
-  $('.product-slide--nav').on('wheel', (function(e) {
-    e.preventDefault();
+  swiper.controller.control = galleryThumbs;
+  galleryThumbs.controller.control = swiper;
 
-    if (e.originalEvent.deltaY < 0) {
-      $(this).slick('slickNext');
-    } else {
-      $(this).slick('slickPrev');
-    }
-  }));
+
 });
 
   </script>
