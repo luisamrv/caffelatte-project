@@ -7,10 +7,10 @@
                     <div class="container">
                         <div class="row">
                             <div class="topbar--menu col-12 col-sm-6 p-0">
-                                <a>BROCHURE</a>
+                                <a href="https://www.caffelattehome.com/download-brochure">BROCHURE</a>
                                 <a>PRICELIST</a>
                                 <a>ABOUT US</a>
-                                <a>TERMS & CONDITIONS</a>
+                                <a href="{{route('terms-and-conditions')}}">TERMS & CONDITIONS</a>
                             </div>
     
                             <div class="topbar--icons col-12 col-sm-6 p-0 text-right">
@@ -67,7 +67,7 @@
                             </li>
     
                             <li class="nav-item position-static">
-                                <a class="nav-link menu-header">BROCHURE</a>
+                                <a class="nav-link menu-header" href="https://www.caffelattehome.com/download-brochure">BROCHURE</a>
                             </li>
     
                             <li class="nav-item position-static">
@@ -146,7 +146,7 @@
                     </div>
 
                     <div class="col-12 new_menu_open">
-                        <a class="nav-link menu-header">BROCHURE</a>
+                        <a class="nav-link menu-header" href="https://www.caffelattehome.com/download-brochure">BROCHURE</a>
                     </div>
 
                     <div class="col-12 new_menu_open">

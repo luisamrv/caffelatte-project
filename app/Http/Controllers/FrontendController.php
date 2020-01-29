@@ -15,9 +15,14 @@ class FrontendController extends Controller
         return view('frontend.homepage');
     }
 
-    public function getBrochura() {
+    public function getBrochure() {
         $products = ProductRepository::getBrandProducts()->take(4);
-        return view('frontend.events.brochura', compact('products'));
+        return view('landings.brochure', compact('products'));
+    }
+
+    public function getEbook($slug){
+        $products = ProductRepository::getBrandProducts()->take(4);
+        return view('landings.download-ebook', compact('slug', 'products'));
     }
 
     public function getAllProducts() {
@@ -39,11 +44,6 @@ class FrontendController extends Controller
         return view('frontend.all-products', compact('categories', 'brand_products', 'all_products'));
     }
 
-    public function getProductMarco() {
-        $products = ProductRepository::getBrandProducts()->take(4);
-        return view('frontend.marco',  compact('products'));
-    }
-
     public function getEventLanding($event)
     {
 
@@ -59,7 +59,7 @@ class FrontendController extends Controller
     }
 
     public function getTermsConditions() {
-        return 'terms and conditions';
+        return view('frontend.terms-and-conditions');
     }
 
     

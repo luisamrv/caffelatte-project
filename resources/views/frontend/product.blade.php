@@ -25,10 +25,10 @@
             
             <div class="col-12 d-none d-lg-block d-lg-block mt-1 p-0">
                 <div class="swiper-container gallery-thumbs">
-                    <div class="swiper-wrapper" style="margin-left:-8%">
+                    <div class="swiper-wrapper" style="margin-left:-14%">
                       @for($i = 1; $i <= $filecount; $i++)
                         <div class="swiper-slide col-md-3 p-0">
-                          <img src="/img/products/product-page/{{$product->slug}}/slide/thumbs/{{$product->slug}}-{{$i}}.jpg" class="img-fluid center-block img-fluid">
+                          <img src="/img/products/product-page/{{$product->slug}}/slide/thumbs/{{$product->slug}}-{{$i}}.jpg" class="img-fluid center-block">
                         </div>
                       @endfor
                     </div>
@@ -36,13 +36,13 @@
           </div>
         </div>
         <div class="col-12 col-lg-5 leftside">
-            <div class="titulo text-center">
+            <div class="product_title">
                 <h3><b>{{$product->name}}</b></h3>
             </div>
-            <div class="sub-titulo text-center">
-                <h4>{{ $product->sub_category->sub_category_languages->where('language_id', '=', '1')->first()->name }}</h4>
+            <div class="product_sub_title">
+                <h4 class="text-uppercase">{{ $product->sub_category->sub_category_languages->where('language_id', '=', '1')->first()->name }}</h4>
             </div>
-            <div class="col-12 p-0 text-justify">
+            <div class="product_description col-12 p-0 text-justify my-4">
                  {!! $product->product_languages[0]->description !!}
             </div>
             <div class="p-0">
@@ -50,9 +50,11 @@
             </div>
             
             @if($product->is_partner == 1)
-            <div class="col-12 p-0 mt-4"> 
-                in partnership with
-                <img src="/img/icons/partners/logo-{{ $product->product_brands[0]->brand->slug }}.png" alt="" style="filter: invert(1);height:50px;">
+            <div class="col-12 p-0 mt-5 product_partners"> 
+                <span class="text-uppercase">in partnership with</span> <br>
+                <a href="{{ $product->product_brands[0]->brand->website_url }}" target="_blank">
+                  <img src="/img/icons/partners/logo-{{ $product->product_brands[0]->brand->slug }}-d.png" alt="">
+                </a>
             </div>
             @endif
         </div>
@@ -68,7 +70,7 @@
         </ul>
 
         <div class="tab-content">
-            <div id="product-details" class="tab-pane fade in active show">
+            <div id="product-details" class="tab-pane in active show">
               <div class="col-12 pl-0 mt-3 float-left">
                 
                 <div class="row">
@@ -97,6 +99,7 @@
                 All the transports made by COVET Lda are insured. If transportation is arranged by COVET HOUSE, fees will be charged separately from the product(s) value. Standard shipping quotation includes door-to-door, drop off service only. If a different service or urgent delivery is required, the customer must clearly request it when placing the order and will be charged accordingly. All products are carefully packed and inspected prior to shipment. <br>
                 We are not responsible for damages caused by handling, loading or unloading by people acting on behalf of the customer. COVET HOUSE is not responsible for loss or damage in transit. Should visible or concealed damage occur in transit, immediately notify the delivering carrier with initial notification of intent to file a claim. <br>
                 Any damage should be communicated to the sales rep during the first 48 hours after receiving the order; photographic and video evidence of the damages should be sent via email. Failure to report concealed damage within 48 hours of reception may result in the denial of the claim. <br>
+                You can find more information about shipping and returns at <a href="{{route('terms-and-conditions')}}">Terms&Conditions</a>.
                 </p>
             </div>
 
@@ -130,7 +133,7 @@
 
     <div class="row">
       @foreach($random_products as $random_product)
-        <div class="col-6 col-sm-6 col-md-4 col-lg-3 my-3">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-3">
           <a rel="modal:open" href="{{route('modal-product-price', ['product' => $random_product->slug] )}}">
               <img src="/img/products/exclusive-products/{{ $random_product->slug }}.png" alt="" class="img-fluid">
               <div class="caption">{{ $random_product->name }}</div>
@@ -156,18 +159,13 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Caffe Latte Modern Design" />
     <meta property="og:description" content="Neutral and Minimalist Designs for Functional Environments with a Modern Aesthetic" />
-    <meta property="og:url" content="https://www.caffelattehome.com/products/" />
+    <meta property="og:url" content="https://www.caffelattehome.com/products/{{$product->slug}}" />
     <meta property="og:site_name" content="Caffe Latte Modern Design" />
     <meta name="image" content="/img/caffe-latte-logo.png">
     <meta property="og:image" content="/img/caffe-latte-logo.png" />
 @endsection
 
 @section('head-includes')
-  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css"> -->
-<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-
-<!-- <script src="https://unpkg.com/swiper/js/swiper.js"></script> -->
-
     <style>
         @media only screen and (min-width: 992px){
             .leftside {
@@ -185,9 +183,7 @@
         }
 
         @media only screen and (min-width: 768px){
-            .nav-tabs-all-products li a.active h5{
-              border-bottom: 2px solid #3a2d24;
-            }
+            
         }
 
         @media only screen and (min-width: 517px) and (max-width: 767px){ 
@@ -195,9 +191,7 @@
               font-weight: bold !important;
             }
 
-            .nav-tabs-all-products li h5{
-              font-size:15px;
-            }
+          
         }
 
         @media only screen and (min-width: 412px) and (max-width: 517px){ 
@@ -205,9 +199,7 @@
               font-weight: bold !important;
             }
 
-            .nav-tabs-all-products li h5{
-              font-size:11px;
-            }
+            
         }
 
         @media only screen and (max-width: 412px) { 
@@ -215,22 +207,7 @@
               font-weight: bold !important;
             }
 
-            .nav-tabs-all-products li h5{
-              font-size:50%;
-            }
-        }
-
-        .swiper-container-horizontal>.swiper-pagination-progressbar{
-            bottom:0 !important;
-            top: auto !important;
-            height:2px !important;
-        }
-        .swiper-pagination-progressbar-fill{
-          background-color:#3a2d24 !important;
-        }
-
-        .nav-tabs {
-            border-bottom: 1px solid #3a2d24 !important;
+          
         }
     </style>
 
@@ -261,94 +238,34 @@
 <script>
 $(window).load(function(){
   var swiper = new Swiper('.swiper-product', {
-              pagination: {
-            el: '.swiper-pagination',
-            type: 'progressbar',
-          },
-          navigation: {
-             nextEl: '.swiper-button-next-thumb',
-             prevEl: '.swiper-button-prev-thumb',
-           },
-          loop:true,
-          loopedSlides:4,
-     });
-     galleryThumbs = new Swiper('.gallery-thumbs', {
-         spaceBetween: 0,
-         centeredSlides: true,
-         slidesPerView: 'auto',
-         touchRatio: 0.2,
-         slideToClickedSlide: true,
-         loop:true,
-         loopedSlides:4,
-        breakpoints: {
-       1024: {
-         slidesPerView: 5,
-         spaceBetween: 15,
-       },
-       768: {
-         slidesPerView: 3,
-         spaceBetween: 15,
-       },
-       640: {
-         slidesPerView: 2,
-         spaceBetween: 15,
-       },
-       320: {
-         slidesPerView: 1,
-         spaceBetween: 15,
-       }
-     }
-      });
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next-thumb',
+      prevEl: '.swiper-button-prev-thumb',
+    },
+    loop:true,
+    loopedSlides:4
+  });
 
-      swiper.controller.control = galleryThumbs;
-      galleryThumbs.controller.control = swiper;
-     // $('.swiper-product').css('height',$('.teste').height());
-     imgheight = $('.img-height').height();
-     $('.swiper-button-next-novelties').css("height", imgheight);
-     $('.swiper-button-prev-novelties').css("height", imgheight);
+  galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 10,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    touchRatio: 0.2,
+    slideToClickedSlide: true,
+    loop:true,
+    loopedSlides:3,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
 
+  swiper.controller.control = galleryThumbs;
+  galleryThumbs.controller.control = swiper;
 
-
-     swiper = new Swiper('swiper-recomended', {
-         spaceBetween: 0,
-         slidesPerView: 3,
-         loop:true,
-         navigation: {
-            nextEl: '.swiper-button-next-rec',
-            prevEl: '.swiper-button-prev-rec',
-          },
-        breakpoints: {
-       1024: {
-         slidesPerView: 3,
-         spaceBetween: 0,
-       },
-       768: {
-         slidesPerView: 2,
-         spaceBetween: 0,
-         autoplay: {
-           delay: 2000,
-           disableOnInteraction: false,
-         },
-       },
-       640: {
-         slidesPerView: 2,
-         spaceBetween: 0,
-         autoplay: {
-           delay: 2000,
-           disableOnInteraction: false,
-         },
-       },
-       320: {
-         slidesPerView: 1,
-         spaceBetween: 0,
-         autoplay: {
-           delay: 2000,
-           disableOnInteraction: false,
-         },
-
-       }
-     }
-      });
 
 });
 
